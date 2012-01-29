@@ -5,8 +5,6 @@ alias v='mvim'
 
 alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.yml.php" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
 
-alias ack='ack -a'
-
 # sf2
 alias scc='app/console cache:clear'
 alias sfassets='app/console assets:install web'
