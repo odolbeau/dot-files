@@ -1,0 +1,27 @@
+[user]
+    name = Olivier Dolbeau
+    email = contact@odolbeau.fr
+[github]
+    user = odolbeau
+    tolen = xxxxxx
+[core]
+    autocrlf = input
+    editor = vim
+    excludesfile = /Users/odolbeau/.gitignore
+[http]
+    sslVerify = false
+[alias]
+    ci   = commit
+    di   = diff
+    sdi  = diff --staged
+    st   = status
+    sta  = stash
+    br   = branch
+    co   = checkout
+    cat  = cat-file -p
+    lg   = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
