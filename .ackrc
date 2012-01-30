@@ -4,6 +4,7 @@
 --ignore-dir=web/js
 --ignore-dir=web/css
 --ignore-dir=tags
+--ignore-dir=_site
 
 # Vim like case sensitivity
 --smart-case
