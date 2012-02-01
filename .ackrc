@@ -11,3 +11,7 @@
 
 # Twig type
 --type-set=twig=.twig
+
+# Ignore some files by default
+--nojs
+--nocss
