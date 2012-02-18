@@ -3,11 +3,12 @@ alias ll='ls -lh'
 alias la='ls -ahl'
 alias v='mvim'
 
-alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.yml.php" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
+alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.yml.php" --exclude="*/cache/**" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
 
 # sf2
-alias scc='app/console cache:clear'
-alias sfassets='app/console assets:install web'
+alias scc='php app/console cache:clear'
+alias sfassets='php app/console assets:install web'
+alias sfdoctrinerebuild='php app/console doctrine:database:drop --force; php app/console doctrine:database:create; php app/console doctrine:schema:create'
 
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {
