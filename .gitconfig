@@ -20,6 +20,7 @@
     co   = checkout
     cat  = cat-file -p
     lg   = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    authors = shortlog -sn --no-merges
 [color]
     branch = auto
     diff = auto
