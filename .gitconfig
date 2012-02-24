@@ -3,7 +3,7 @@
     email = contact@odolbeau.fr
 [github]
     user = odolbeau
-    tolen = xxxxxx
+    token = xxxxxx
 [core]
     autocrlf = input
     editor = vim
