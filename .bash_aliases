@@ -11,6 +11,7 @@ alias sccp='scc --env=prod'
 alias scct='scc --env=test'
 alias sfassets='php app/console assets:install web'
 alias sfdoctrinerebuild='php app/console doctrine:database:drop --force; php app/console doctrine:database:create; php app/console doctrine:schema:create'
+alias sfdoctrinerebuildtest='php app/console doctrine:database:drop --force --env=test; php app/console doctrine:database:create --env=test; php app/console doctrine:schema:create --env=test'
 
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {
