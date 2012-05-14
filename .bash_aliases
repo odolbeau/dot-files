@@ -5,6 +5,8 @@ alias v='mvim'
 
 alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
 
+alias updatedb='sudo /usr/libexec/locate.updatedb'
+
 # sf2
 alias scc='php app/console cache:clear'
 alias sccp='scc --env=prod'
