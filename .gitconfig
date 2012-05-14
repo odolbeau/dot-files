@@ -1,13 +1,10 @@
 [user]
     name = Olivier Dolbeau
     email = contact@odolbeau.fr
-[github]
-    user = odolbeau
-    token = xxxxxx
 [core]
     autocrlf = input
     editor = vim
-    excludesfile = /Users/odolbeau/.gitignore
+    excludesfile = ~/.gitignore
 [http]
     sslVerify = false
 [alias]
