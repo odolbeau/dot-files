@@ -7,6 +7,9 @@ alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --excl
 
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 
+# Git
+alias g='git'
+
 # sf2
 alias scc='php app/console cache:clear'
 alias sccp='scc --env=prod'
