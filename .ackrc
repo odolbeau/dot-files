@@ -11,6 +11,7 @@
 
 # Twig type
 --type-set=twig=.twig
+--type-set=scss=.scss
 
 # Ignore some files by default
 --nojs
