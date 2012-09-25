@@ -19,6 +19,7 @@
     lg   = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
     authors = shortlog -sn --no-merges
     fetch = fetch -p
+    mep = !git lg $(ssh comtools1 cat /space/products/comuto3/prod/SHA1)..origin/master
 [color]
     branch = auto
     diff = auto
