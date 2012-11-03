@@ -3,8 +3,8 @@ alias ll='ls -lh'
 alias la='ls -ahl'
 alias v='mvim'
 
+# Others
 alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
-
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 
 # Git
