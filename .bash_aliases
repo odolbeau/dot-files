@@ -16,9 +16,7 @@ alias gp='git pull'
 alias gdb='git br -d'
 
 # sf2
-alias scc='php app/console cache:clear'
-alias sccp='scc --env=prod'
-alias scct='scc --env=test'
+alias scc='rm -Rf app/cache/*'
 alias sfassets='php app/console assets:install web'
 alias sfdoctrinerebuild='php app/console doctrine:database:drop --force; php app/console doctrine:database:create; php app/console doctrine:schema:create'
 alias sfdoctrinerebuildtest='php app/console doctrine:database:drop --force --env=test; php app/console doctrine:database:create --env=test; php app/console doctrine:schema:create --env=test'
