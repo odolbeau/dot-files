@@ -20,11 +20,13 @@ alias scc='rm -Rf app/cache/*'
 alias sfassets='php app/console assets:install web'
 alias sfdoctrinerebuild='php app/console doctrine:database:drop --force; php app/console doctrine:database:create; php app/console doctrine:schema:create'
 alias sfdoctrinerebuildtest='php app/console doctrine:database:drop --force --env=test; php app/console doctrine:database:create --env=test; php app/console doctrine:schema:create --env=test'
+alias sfpu='phpunit -c app'
 alias phpcsfixer='php-cs-fixer fix src/ --fixers=indentation,trailing_spaces,unused_use,php_closing_tag,return,braces,phpdoc_params,eof_ending,extra_empty_lines,include,controls_spaces,elseif'
 
 # BlaBlaCar
 alias blatail='tail -f app/logs/*.log app/logs/*/*/*.log /tmp/v3worker_*.log'
-alias blatrans='php app/console comuto:translation:update --force; rm -Rf app/cache/*'
+alias blatrans='php app/console comuto:translation:update --force; php app/console comuto:translation:update; rm -Rf app/cache/*'
+alias blacheckredis='redis-cli -h vbbcredis2 -n 0 keys \* |grep -v ^sess:'
 
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {
