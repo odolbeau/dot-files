@@ -6,9 +6,6 @@
 --ignore-dir=tags
 --ignore-dir=_site
 
-# Vim like case sensitivity
---smart-case
-
 # Twig type
 --type-set=twig=.twig
 --type-set=scss=.scss
