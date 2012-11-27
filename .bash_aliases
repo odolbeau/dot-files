@@ -12,6 +12,7 @@ alias g='git'
 alias gf='git fetch -p'
 alias gfmm='git fetch -p && git merge origin/master'
 alias gfrm='git fetch -p && git rebase origin/master'
+alias gfr='git fetch -p && git rebase '
 alias gp='git pull'
 alias gdb='git br -d'
 
