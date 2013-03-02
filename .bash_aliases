@@ -3,6 +3,13 @@ alias ll='ls -lh'
 alias la='ls -ahl'
 alias v='mvim'
 
+# reload
+alias rl_es='launchctl unload ~/Library/LaunchAgents/blablacar.elasticsearch.plist && launchctl load ~/Library/LaunchAgents/blablacar.elasticsearch.plist'
+alias rl_indexer='launchctl unload ~/Library/LaunchAgents/blablacar.indexer.plist && launchctl load ~/Library/LaunchAgents/blablacar.indexer.plist'
+alias rl_fpm='launchctl unload ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist && launchctl load ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist'
+alias rl_redis='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
+alias rl_mysql='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist'
+
 # Others
 alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
