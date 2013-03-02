@@ -39,3 +39,6 @@ function _prompt_command() {
 PROMPT_COMMAND=_prompt_command
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+# Change default ulimit to avoir errors
+ulimit -n 1024
