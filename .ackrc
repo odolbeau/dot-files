@@ -7,8 +7,10 @@
 --ignore-dir=_site
 
 # Twig type
+--type-set=yml=.yml
 --type-set=twig=.twig
 --type-set=scss=.scss
+--type-set=database=.database
 
 # Ignore some files by default
 --nojs
