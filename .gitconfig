@@ -22,6 +22,7 @@
     authors = shortlog -sn --no-merges
     fetch = fetch -p
     mep = !git lg $(ssh comtools1 cat /space/products/comuto3/prod/SHA1)..origin/master
+    brd = !git branch --merged | grep -v master | xargs git branch -d
 [color]
     branch = auto
     diff = auto
