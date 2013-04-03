@@ -13,6 +13,7 @@ alias rl_mysql='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plis
 # Others
 alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
+alias count_mysql_connections='mysql -NBe "show processlist;"'
 
 # Git
 alias g='git'
@@ -43,6 +44,11 @@ alias sfcdg='sfcd | grep'
 alias blatail='tail -f app/logs/*.log app/logs/*/*/*.log /tmp/v3worker_*.log'
 alias blatrans='php app/console comuto:translation:update --force; php app/console comuto:translation:update; rm -Rf app/cache/*'
 alias blacheckredis='redis-cli -h vbbcredis2 -n 0 keys \* |grep -v ^sess:'
+alias blainitslotgithook='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot-githook.sh"'
+
+function blainitslot {
+    ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot2.sh $1 $2"
+}
 
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {
