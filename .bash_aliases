@@ -43,8 +43,8 @@ alias sfcdg='sfcd | grep'
 # BlaBlaCar
 alias blatail='tail -f app/logs/*.log app/logs/*/*/*.log /tmp/v3worker_*.log'
 alias blatrans='php app/console comuto:translation:update --force; php app/console comuto:translation:update; rm -Rf app/cache/*'
-alias blacheckredis='redis-cli -h vbbcredis2 -n 0 keys \* |grep -v ^sess:'
 alias blainitslotgithook='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot-githook.sh"'
+alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
 
 function blainitslot {
     ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot2.sh $1 $2"
