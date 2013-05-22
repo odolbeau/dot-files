@@ -42,13 +42,11 @@ alias sfcdg='sfcd | grep'
 
 # BlaBlaCar
 alias blatail='tail -f app/logs/*.log app/logs/*/*/*.log /tmp/v3worker_*.log'
-alias blatrans='php app/console comuto:translation:update --force; php app/console comuto:translation:update; rm -Rf app/cache/*'
+alias blatrans='php app/console blablacar:translation:update --force; php app/console blablacar:translation:update; rm -Rf app/cache/*'
 alias blainitslotgithook='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot-githook.sh"'
+alias blainitslot='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot2.sh"'
 alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
-
-function blainitslot {
-    ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot2.sh $1 $2"
-}
+alias blaupdatesatis='ssh comtools1 "cd /space/products/composer-packages/satis/ && sudo -u www-data ./bin/satis build packages/comuto3.json www/"'
 
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {

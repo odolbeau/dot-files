@@ -31,3 +31,7 @@
     status = auto
 [push]
     default = current
+[diff]
+    wordRegex = .
+[log]
+    abbrevCommit = true
