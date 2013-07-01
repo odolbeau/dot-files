@@ -21,7 +21,8 @@
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     authors = shortlog -sn --no-merges
     fetch = fetch -p
-    mep = !git lg $(ssh comtools1 cat /space/products/comuto3/prod/SHA1)..origin/master
+    mepv3 = !git lg $(ssh comtools1 cat /space/products/comuto3/prod/SHA1)..origin/master
+    mepConsole = !git lg $(ssh comtools1 cat /space/products/console/prod/SHA1)..origin/master
     brd = !git branch --merged | grep -v master | xargs git branch -d
     wip = !git add -A && git ci -m 'WIP'
 [color]
