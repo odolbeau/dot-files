@@ -1,6 +1,7 @@
 export EDITOR="vim"
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
