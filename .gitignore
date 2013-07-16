@@ -3,3 +3,6 @@
 .DS_Store
 tags
 *~
+.classpath
+.project
+.settings
