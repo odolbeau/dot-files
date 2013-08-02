@@ -9,6 +9,7 @@ alias rl_indexer='launchctl unload ~/Library/LaunchAgents/blablacar.indexer.plis
 alias rl_fpm='launchctl unload ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist && launchctl load ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist'
 alias rl_redis='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
 alias rl_mysql='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist'
+alias rl_rabbitmq='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist'
 
 # Others
 alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
@@ -37,7 +38,7 @@ alias sfpus='phpunit --colors -c app --stop-on-failure'
 alias sfpuf='phpunit --colors -c app --filter'
 alias sfpud='phpunit --colors -c app --debug'
 alias phpcsfixer='php-cs-fixer fix src/ --fixers=indentation,trailing_spaces,unused_use,php_closing_tag,return,braces,phpdoc_params,eof_ending,extra_empty_lines,include,controls_spaces,elseif'
-alias sfcd='php app/console container:debug'
+alias sfcd='php app/console container:debug --show-private'
 alias sfcdg='sfcd | grep'
 
 # BlaBlaCar
@@ -49,6 +50,7 @@ alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
 alias blaupdatesatis='ssh comtools1 "cd /space/products/composer-packages/satis/ && sudo -u www-data ./bin/satis build packages/comuto3.json www/"'
 alias blaconsumecapl='ssh comtools1 "cd /space/products/comuto3/prod/ && sudo -u www-data app/capl consume --kernel-env=prod --no-kernel-debug --requeue-on-error --max-messages=10"'
 alias blaconsumemailworker='ssh comtools1 "cd /space/products/comuto3/prod/ && sudo -u www-data app/mailworker send --requeue-on-error --max-messages=100"'
+alias blaconsumeconsole='ssh comtools1 "sudo -u www-data /space/products/console/prod/console indexer:consume --max-messages=10"'
 alias blacroncheck='redis-cli -h vbbcredis2.short -n 3 KEYS "cron:*"'
 alias blacronclean='blacroncheck | xargs -n 30 redis-cli -h pmk-redis-write -n 3 DEL'
 
