@@ -14,7 +14,3 @@
 --type-set=yml=.yml
 --type-set=json=.json
 --type-set=feature=.feature
-
-# Ignore some files by default
---nojs
---nocss
