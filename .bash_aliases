@@ -48,9 +48,9 @@ alias blainitslotgithook='ssh comtools1 "sudo -u www-data /space/products/comuto
 alias blainitslot='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot2.sh"'
 alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
 alias blaupdatesatis='ssh comtools1 "cd /space/products/composer-packages/satis/ && sudo -u www-data ./bin/satis build packages/comuto3.json www/"'
-alias blaconsumecapl='ssh comtools1 "sudo -u www-data /space/products/comuto3/prod/app/capl consume --kernel-env=prod --no-kernel-debug --requeue-on-error --max-messages=10"'
-alias blaconsumemailworker='ssh comtools1 "sudo -u www-data /space/products/comuto3/prod/app/mailworker send --requeue-on-error --max-messages=100"'
-alias blaconsumeconsole='ssh comtools1 "sudo -u www-data /space/products/console/prod/console indexer:consume --max-messages=10"'
+alias blaconsumecapl='ssh vbbcwork1 "sudo -u www-data /space/products/comuto3/prod/app/capl consume --kernel-env=prod --no-kernel-debug --requeue-on-error --max-messages=10"'
+alias blaconsumemailworker='ssh vbbcwork1 "sudo -u www-data /space/products/comuto3/prod/app/mailworker send --requeue-on-error --max-messages=100"'
+alias blaconsumeconsole='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console indexer:consume --max-messages=10"'
 alias blacroncheck='redis-cli -h vbbcredis2.short -n 3 KEYS "cron:*"'
 alias blacronclean='blacroncheck | xargs -n 30 redis-cli -h pmk-redis-write -n 3 DEL'
 
