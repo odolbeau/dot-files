@@ -4,7 +4,7 @@ alias la='ls -ahl'
 alias v='mvim'
 
 # reload
-alias rl_es='launchctl unload ~/Library/LaunchAgents/blablacar.elasticsearch.plist && launchctl load ~/Library/LaunchAgents/blablacar.elasticsearch.plist'
+alias rl_es='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist'
 alias rl_indexer='launchctl unload ~/Library/LaunchAgents/blablacar.indexer.plist && launchctl load ~/Library/LaunchAgents/blablacar.indexer.plist'
 alias rl_fpm='launchctl unload ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist && launchctl load ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist'
 alias rl_redis='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
