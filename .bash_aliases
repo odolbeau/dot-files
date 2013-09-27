@@ -48,11 +48,13 @@ alias blainitslotgithook='ssh comtools1 "sudo -u www-data /space/products/comuto
 alias blainitslot='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot2.sh"'
 alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
 alias blaupdatesatis='ssh comtools1 "cd /space/products/composer-packages/satis/ && sudo -u www-data ./bin/satis build packages/comuto3.json www/"'
-alias blaconsumecapl='ssh vbbcwork1 "sudo -u www-data /space/products/comuto3/prod/app/capl consume --kernel-env=prod --no-kernel-debug --requeue-on-error --max-messages=10"'
-alias blaconsumemailworker='ssh vbbcwork1 "sudo -u www-data /space/products/comuto3/prod/app/mailworker send --requeue-on-error --max-messages=100"'
+alias blaconsumev3='ssh vbbcwork1 "sudo -u www-data /space/products/comuto3/prod/app/console blablacar:worker:consume --env=prod --no-debug --requeue-on-error --max-messages=10"'
+alias blaconsumemailworker='ssh vbbcwork1 "sudo -u www-data /space/products/mailworker/prod/mailworker send --requeue-on-error --max-messages=100"'
 alias blaconsumeconsole='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console indexer:consume --max-messages=10"'
 alias blacroncheck='redis-cli -h vbbcredis2.short -n 3 KEYS "cron:*"'
 alias blacronclean='blacroncheck | xargs -n 30 redis-cli -h pmk-redis-write -n 3 DEL'
+alias blaindextripoffer='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:tr --id="'
+alias blaindexmember='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:member --id="'
 
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {
