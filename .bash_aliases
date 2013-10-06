@@ -14,7 +14,7 @@ alias rl_rabbitmq='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitm
 # Others
 alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
-alias count_mysql_connections='mysql -NBe "show processlist;"'
+alias count_mysql_connections='watch -n 1 "mysql -e \"show processlist;\" | wc -l"'
 
 # Git
 alias g='git'
@@ -55,6 +55,9 @@ alias blacroncheck='redis-cli -h vbbcredis2.short -n 3 KEYS "cron:*"'
 alias blacronclean='blacroncheck | xargs -n 30 redis-cli -h pmk-redis-write -n 3 DEL'
 alias blaindextripoffer='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:tr --id="'
 alias blaindexmember='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:member --id="'
+
+# BlaBlaCar root
+alias blarl_logstash_daemon='ssh root@ls-syslog "service logstash restart"'
 
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {
