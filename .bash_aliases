@@ -12,7 +12,8 @@ alias rl_mysql='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plis
 alias rl_rabbitmq='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist'
 
 # Others
-alias tags='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
+alias ctags_php='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
+alias ctags_java='ctags -f tags -R --exclude=".svn" --exclude="*.sql" --language-force=java'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias count_mysql_connections='watch -n 1 "mysql -e \"show processlist;\" | wc -l"'
 
