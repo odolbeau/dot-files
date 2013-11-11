@@ -6,3 +6,4 @@ tags
 .classpath
 .project
 .settings
+.bash_secret
