@@ -15,7 +15,7 @@ alias rl_rabbitmq='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitm
 alias ctags_php='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
 alias ctags_java='ctags -f tags -R --exclude=".svn" --exclude="*.sql" --language-force=java'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
-alias count_mysql_connections='watch -n 1 "mysql -e \"show processlist;\" | wc -l"'
+alias count_mysql_connections='watch -n 1 "mysql -uroot -e \"show processlist;\" | wc -l"'
 
 # Git
 alias g='git'
@@ -50,9 +50,9 @@ alias blainitslot='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/
 alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
 alias blaupdatesatis='ssh comtools1 "cd /space/products/composer-packages/satis/ && sudo -u www-data ./bin/satis build packages/comuto3.json www/"'
 alias blaconsumev3='ssh vbbcwork1 "sudo -u www-data /space/products/comuto3/prod/app/console blablacar:worker:consume --env=prod --no-debug --max-messages=10"'
-alias blaconsumemailworker='ssh vbbcwork1 "sudo -u www-data /space/products/mailworker/prod/mailworker send --max-messages=100"'
+alias blaconsumemailworker='ssh vbbcwork1 "sudo -u www-data /space/products/mail-worker/prod/console send --max-messages=100"'
 alias blaconsumesmsworker='ssh vbbcwork1 "sudo -u www-data /space/products/smsworker/prod/smsworker send --max-messages=100"'
-alias blaconsumeconsole='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console indexer:consume --max-messages=10"'
+alias blaconsumeconsole='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console indexer:consume --max-messages=1000"'
 alias blacroncheck='redis-cli -h vbbcredis2.short -n 3 KEYS "cron:*"'
 alias blacronclean='blacroncheck | xargs -n 30 redis-cli -h pmk-redis-write -n 3 DEL'
 alias blaindextripoffer='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:tr --id="'

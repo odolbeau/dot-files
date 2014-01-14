@@ -5,7 +5,7 @@ export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43
 export HISTCONTROL=ignoredups
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
+export EC2_URL="https://ec2.eu-west-1.amazonaws.com"
 
 export JBOSS_HOME=/usr/local/opt/jboss-as/libexec
 
