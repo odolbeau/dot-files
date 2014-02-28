@@ -50,16 +50,19 @@ alias blainitslot='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/
 alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
 alias blaupdatesatis='ssh comtools1 "cd /space/products/composer-packages/satis/ && sudo -u www-data ./bin/satis build packages/comuto3.json www/"'
 alias blaconsumev3='ssh vbbcwork1 "sudo -u www-data /space/products/comuto3/prod/app/console blablacar:worker:consume --env=prod --no-debug --max-messages=10"'
-alias blaconsumemailworker='ssh vbbcwork1 "sudo -u www-data /space/products/mail-worker/prod/console send --max-messages=100"'
-alias blaconsumesmsworker='ssh vbbcwork1 "sudo -u www-data /space/products/smsworker/prod/smsworker send --max-messages=100"'
+alias blaconsumemailworker='ssh vbbcwork1 "sudo -u www-data /space/products/mail-worker/prod/console consume --max-messages=100"'
+alias blaconsumesmsworker='ssh vbbcwork1 "sudo -u www-data /space/products/smsworker/prod/smsworker consume --max-messages=100"'
 alias blaconsumeconsole='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console indexer:consume --max-messages=1000"'
 alias blacroncheck='redis-cli -h vbbcredis2.short -n 3 KEYS "cron:*"'
 alias blacronclean='blacroncheck | xargs -n 30 redis-cli -h pmk-redis-write -n 3 DEL'
 alias blaindextripoffer='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:tr --id="'
 alias blaindexmember='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:member --id="'
+alias blaupdatemisc='ssh comtools1 "cd /space/products/misc && sudo -u www-data git pull && sudo -u www-data make clean all"'
 
-# BlaBlaCar root
-alias blarl_logstash_daemon='ssh root@ls-syslog "service logstash restart"'
+# EC2
+function aws-sts-decode-authorization-message {
+    aws sts decode-authorization-message --encoded-message $1 | sed 's/\\//g' | sed 's/"{"/{"/' | sed 's/}}}"/}}}/'
+}
 
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {
