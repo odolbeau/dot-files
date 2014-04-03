@@ -25,6 +25,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:${JBOSS_HOME}/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
