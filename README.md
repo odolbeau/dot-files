@@ -13,6 +13,7 @@ Really simple...
     ln -s dot-files/.gitconfig      .gitconfig
     ln -s dot-files/.gitignore      .gitignore
     ln -s dot-files/.osx            .osx
+    ln -s dot-files/.rubocop        .rubocop
     ln -s dot-files/.screenrc       .screenrc
 
 ## Installing Mac
