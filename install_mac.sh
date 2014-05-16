@@ -30,14 +30,11 @@ brew tap phinze/cask
 brew install brew-cask
 brew cask install adium dropbox launchrocket pandoc sequel-pro slack spectacle
 
-curl -L https://www.opscode.com/chef/install.sh | sudo bash
-
 # Others
 sudo gem update --system
 sudo gem pristine --all --only-executables
-sudo gem install jekyll kramdown bundler eventmachine thin foodcritic nokogiri hitimes nio4r json dep-selector-libgecode dep_selector
-sudo gem install json -v '1.7.7'
-#sudo gem install compass
+sudo gem install bundler
+bundle install
 pip install json
 
 # Update PHP Conf
