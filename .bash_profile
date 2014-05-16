@@ -7,6 +7,7 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 export EC2_URL="https://ec2.eu-west-1.amazonaws.com"
 export DOCKER_HOST=tcp://
+export HISTTIMEFORMAT="%d/%m/%y %T "
 
 export JBOSS_HOME=/usr/local/opt/jboss-as/libexec
 
@@ -20,12 +21,17 @@ if [ -f ~/.bash_prompt ]; then
 	. ~/.bash_prompt
 fi
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-	. `brew --prefix`/etc/bash_completion
-fi
+[ -f `brew --prefix`/etc/bash_completion ] && source `brew --prefix`/etc/bash_completion
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:${JBOSS_HOME}/bin:$PATH"
+export PATH="/usr/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="${JBOSS_HOME}/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
