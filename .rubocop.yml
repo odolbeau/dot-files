@@ -3,5 +3,6 @@
 LineLength:
     Max: 119
 
+# Just to avoid warning in metadata files.
 SingleSpaceBeforeFirstArg:
     Enabled: false
