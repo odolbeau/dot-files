@@ -5,6 +5,7 @@
 --ignore-dir=web/css
 --ignore-dir=tags
 --ignore-dir=_site
+--ignore-dir=.subsplit
 
 # Twig type
 --type-set=database=.database
