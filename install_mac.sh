@@ -28,7 +28,7 @@ brew install macvim
 brew linkapps
 brew tap phinze/cask
 brew install brew-cask
-brew cask install adium dropbox launchrocket pandoc sequel-pro slack spectacle
+brew cask install adium dropbox google-chrome iterm2 launchrocket onepassword pandoc sequel-pro slack spectacle
 
 # Others
 sudo gem update --system
