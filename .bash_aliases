@@ -1,4 +1,5 @@
 # ls aliases
+alias ls='ls --color'
 alias ll='ls -lh'
 alias la='ls -ahl'
 alias v='mvim'
