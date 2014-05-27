@@ -64,6 +64,7 @@ alias gov3='cd /space/products/bbcthree/comuto3'
 alias goworkers='cd /space/products/workers'
 alias godomain='cd /space/products/domain/all'
 alias gochef='cd /space/products/chef/chef'
+alias godevvm='cd /space/products/admin/dev-vm'
 
 # EC2
 function aws-sts-decode-authorization-message {
