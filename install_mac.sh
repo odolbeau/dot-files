@@ -30,6 +30,10 @@ brew tap phinze/cask
 brew install brew-cask
 brew cask install adium dropbox google-chrome iterm2 launchrocket onepassword pandoc sequel-pro slack spectacle vagrant virtualbox
 
+# autocompletion
+brew tap homebrew/completions
+brew install vagrant-completion
+
 # Others
 sudo gem update --system
 sudo gem pristine --all --only-executables
