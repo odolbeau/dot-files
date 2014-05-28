@@ -13,6 +13,12 @@ npm install -g grunt-cli
 npm install -g bower
 rm /usr/local/Cellar/mysql/*/my.cnf
 
+# Need older version of gecode
+cd $( brew --prefix )
+git checkout 3c5ca25 Library/Formula/gecode.rb
+brew install gecode
+git checkout -- Library/Formula/gecode.rb
+
 # Launch all
 brew services start elasticsearch
 brew services start php54
