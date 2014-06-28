@@ -17,6 +17,7 @@
     co   = checkout
     cp   = cherry-pick
     cat  = cat-file -p
+    lga  = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cd)%Creset' --abbrev-commit --date=short
     lg   = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     authors = shortlog -sn --no-merges
