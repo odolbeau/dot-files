@@ -18,6 +18,7 @@ alias ctags_php='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" -
 alias ctags_java='ctags -f tags -R --exclude=".svn" --exclude="*.sql" --language-force=java'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias count_mysql_connections='watch -n 1 "mysql -uroot -e \"show processlist;\" | wc -l"'
+alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
 
 # Git
 alias g='git'
@@ -28,8 +29,9 @@ alias gfr='git fetch -p && git rebase '
 alias gp='git pull'
 alias gdb='git br -d'
 
-# PHP & env
-alias stop-fpm='kill `cat /usr/local/var/run/php-fpm.pid`'
+# PHP
+alias phpcsfixer='php-cs-fixer fix src/ --fixers=indentation,trailing_spaces,unused_use,php_closing_tag,return,braces,phpdoc_params,eof_ending,extra_empty_lines,include,controls_spaces,elseif'
+alias phptags='ctags -R --PHP-kinds=+cf -f tags.vendors vendor && ctags -R --PHP-kinds=+cf src'
 
 # sf2
 alias scc='rm -Rf app/cache/*'
@@ -40,7 +42,6 @@ alias sfpu='phpunit --colors -c app'
 alias sfpus='sfpu --stop-on-failure'
 alias sfpuf='sfpu --filter'
 alias sfpud='sfpu --debug'
-alias phpcsfixer='php-cs-fixer fix src/ --fixers=indentation,trailing_spaces,unused_use,php_closing_tag,return,braces,phpdoc_params,eof_ending,extra_empty_lines,include,controls_spaces,elseif'
 alias sfcd='php app/console container:debug --show-private'
 alias sfcdg='sfcd | grep'
 
@@ -65,6 +66,7 @@ alias goworkers='cd /space/products/workers'
 alias godomain='cd /space/products/domain/all'
 alias gochef='cd /space/products/chef/chef'
 alias godevvm='cd /space/products/admin/dev-vm'
+alias gomisc='cd /space/products/misc'
 
 # EC2
 function aws-sts-decode-authorization-message {
