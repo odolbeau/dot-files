@@ -6,8 +6,8 @@ mkdir -p ~/Library/LaunchAgents
 brew install git wget autoconf bash coreutils ack bash-completion ruby python watch
 brew tap homebrew/dupes
 brew tap homebrew/php
-brew install php54 --with-fpm --with-imap --with-homebrew-openssl
-brew install php54-intl php54-amqp php54-apc php54-mcrypt php54-memcached php54-redis php54-yaml
+brew install php55 --with-fpm --with-imap --with-homebrew-openssl --with-homebrew-curl --with-homebrew-libxslt
+brew install php55-intl php55-amqp php55-mcrypt php55-memcached php55-redis php55-yaml
 brew install composer node mysql nginx redis maven graphviz elasticsearch fswatch curl tree
 npm install -g grunt-cli
 npm install -g bower
@@ -21,7 +21,7 @@ git checkout -- Library/Formula/gecode.rb
 
 # Launch all
 brew services start elasticsearch
-brew services start php54
+brew services start php55
 brew services start mysql
 brew services start redis
 brew services start memcached
@@ -48,7 +48,7 @@ bundle install
 pip install json
 
 # Update PHP Conf
-echo "memory_limit = 2048M" >> /usr/local/etc/php/5.4/php.ini
-echo "post_max_size = 16M" >> /usr/local/etc/php/5.4/php.ini
-echo "upload_max_filesize = 16M" >> /usr/local/etc/php/5.4/php.ini
-echo "date.timezone = 'Europe/Paris'" >> /usr/local/etc/php/5.4/php.ini
+echo "memory_limit = 2048M" >> /usr/local/etc/php/5.5/php.ini
+echo "post_max_size = 16M" >> /usr/local/etc/php/5.5/php.ini
+echo "upload_max_filesize = 16M" >> /usr/local/etc/php/5.5/php.ini
+echo "date.timezone = 'Europe/Paris'" >> /usr/local/etc/php/5.5/php.ini

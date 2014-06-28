@@ -41,7 +41,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 if [ $has_brew -eq 1 ]; then
 	export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-	export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
+	export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
