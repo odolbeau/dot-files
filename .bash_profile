@@ -38,6 +38,7 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="${JBOSS_HOME}/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 
 if [ $has_brew -eq 1 ]; then
 	export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
