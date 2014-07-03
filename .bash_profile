@@ -31,18 +31,17 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
-export PATH="$PATH:/usr/bin"
-export PATH="$PATH:/usr/local/bin"
-export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:/usr/local/share/npm/bin"
-export PATH="$PATH:/usr/local/opt/ruby/bin"
-export PATH="$PATH:${JBOSS_HOME}/bin"
-export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-export PATH="$PATH:/usr/local/heroku/bin"
+export PATH="/usr/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="${JBOSS_HOME}/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
 
 if [ $has_brew -eq 1 ]; then
-	export PATH="$PATH:$(brew --prefix coreutils)/libexec/gnubin"
-	export PATH="$PATH:$(brew --prefix homebrew/php/php55)/bin"
+	export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+	export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
