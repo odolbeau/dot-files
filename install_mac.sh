@@ -3,7 +3,7 @@
 xcode-select --install
 
 mkdir -p ~/Library/LaunchAgents
-brew install git wget autoconf bash coreutils ack bash-completion ruby python watch
+brew install git wget autoconf bash coreutils ack bash-completion ruby python watch go
 brew tap homebrew/dupes
 brew tap homebrew/php
 brew install php55 --with-fpm --with-imap --with-homebrew-openssl --with-homebrew-curl --with-homebrew-libxslt
