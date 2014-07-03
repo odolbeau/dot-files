@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Need to download:
+# https://xquartz.macosforge.org/landing/
+# Then brew install cairo py2cairo
+
 xcode-select --install
 
 mkdir -p ~/Library/LaunchAgents
@@ -45,7 +49,7 @@ sudo gem update --system
 sudo gem pristine --all --only-executables
 sudo gem install bundler
 bundle install
-pip install json
+pip install json carbon whisper
 
 # Update PHP Conf
 echo "memory_limit = 2048M" >> /usr/local/etc/php/5.5/php.ini
