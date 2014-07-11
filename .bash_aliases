@@ -14,8 +14,6 @@ alias rl_rabbitmq='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitm
 alias rl_profile='source ~/.bash_profile'
 
 # Others
-alias ctags_php='ctags -f tags -h ".php" -R --exclude=".svn" --exclude="*.sql" --exclude="*/cache/**" --exclude="*.min.js" --totals=yes --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --regex-PHP="/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/"'
-alias ctags_java='ctags -f tags -R --exclude=".svn" --exclude="*.sql" --language-force=java'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias count_mysql_connections='watch -n 1 "mysql -uroot -e \"show processlist;\" | wc -l"'
 alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
@@ -30,7 +28,6 @@ alias gp='git pull'
 alias gdb='git br -d'
 
 # PHP
-alias phpcsfixer='php-cs-fixer fix src/ --fixers=indentation,trailing_spaces,unused_use,php_closing_tag,return,braces,phpdoc_params,eof_ending,extra_empty_lines,include,controls_spaces,elseif'
 alias phptags='ctags -R --PHP-kinds=+cf -f tags.vendors vendor && ctags -R --PHP-kinds=+cf src'
 
 # sf2
