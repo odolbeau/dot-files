@@ -12,7 +12,7 @@ brew tap homebrew/dupes
 brew tap homebrew/php
 brew install php55 --with-fpm --with-imap --with-homebrew-openssl --with-homebrew-curl --with-homebrew-libxslt
 brew install php55-intl php55-amqp php55-mcrypt php55-memcached php55-redis php55-yaml
-brew install composer node mysql nginx redis maven graphviz elasticsearch fswatch curl tree
+brew install composer node mysql nginx redis maven graphviz elasticsearch fswatch curl tree php-cs-fixer
 npm install -g grunt-cli
 npm install -g bower
 rm /usr/local/Cellar/mysql/*/my.cnf
