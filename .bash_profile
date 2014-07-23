@@ -45,6 +45,8 @@ if [ $has_brew -eq 1 ]; then
 	export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 fi
 
+export GOPATH="/space/others/go"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # Color man entries
