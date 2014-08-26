@@ -43,6 +43,7 @@ export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 if [ $has_brew -eq 1 ]; then
 	export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 	export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+	export PATH="$(brew --prefix ruby)/bin:$PATH"
 fi
 
 export GOPATH="/space/others/go"
