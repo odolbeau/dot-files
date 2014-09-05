@@ -6,6 +6,9 @@
 
 xcode-select --install
 
+# Don't lose WIFI when locking screen
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 prefs DisconnectOnLogout=NO
+
 mkdir -p ~/Library/LaunchAgents
 brew install git wget autoconf bash coreutils ack bash-completion ruby python watch go
 brew tap homebrew/dupes
