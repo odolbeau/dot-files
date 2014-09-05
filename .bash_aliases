@@ -4,10 +4,12 @@ alias ll='ls -lh'
 alias la='ls -ahl'
 alias v='mvim'
 
+alias fuck='sudo $(history -p \!\!)'
+
 # reload
 alias rl_es='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist'
 alias rl_indexer='launchctl unload ~/Library/LaunchAgents/blablacar.indexer.plist && launchctl load ~/Library/LaunchAgents/blablacar.indexer.plist'
-alias rl_fpm='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.php54.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php54.plist'
+alias rl_fpm='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.php55.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php55.plist'
 alias rl_redis='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
 alias rl_mysql='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist'
 alias rl_rabbitmq='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist'
@@ -60,7 +62,7 @@ alias blaindexmember='ssh vbbcwork1 "sudo -u www-data /space/products/console/pr
 alias blaupdatemisc='ssh comtools1 "cd /space/products/misc && sudo -u www-data git pull && sudo -u www-data make clean all"'
 alias gov3='cd /space/products/bbcthree/comuto3'
 alias goworkers='cd /space/products/workers'
-alias godomain='cd /space/products/domain/all'
+alias godomain='cd /space/products/domain'
 alias gochef='cd /space/products/chef/chef'
 alias godevvm='cd /space/products/admin/dev-vm'
 alias gomisc='cd /space/products/misc'
