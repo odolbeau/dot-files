@@ -66,6 +66,7 @@ alias godomain='cd /space/products/domain'
 alias gochef='cd /space/products/chef/chef'
 alias godevvm='cd /space/products/admin/dev-vm'
 alias gomisc='cd /space/products/misc'
+alias goadmin='cd /space/products/admin'
 
 # EC2
 function aws-sts-decode-authorization-message {
