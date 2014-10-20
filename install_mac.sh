@@ -11,29 +11,6 @@ sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Res
 
 mkdir -p ~/Library/LaunchAgents
 brew install git wget autoconf bash coreutils ack bash-completion ruby python watch go
-brew tap homebrew/dupes
-brew tap homebrew/php
-brew install php55 --with-fpm --with-imap --with-homebrew-openssl --with-homebrew-curl --with-homebrew-libxslt
-brew install php55-intl php55-amqp php55-mcrypt php55-memcached php55-redis php55-yaml
-brew install composer node mysql nginx redis maven graphviz elasticsearch fswatch curl tree php-cs-fixer
-npm install -g grunt-cli
-npm install -g bower
-rm /usr/local/Cellar/mysql/*/my.cnf
-
-# Need older version of gecode
-cd $( brew --prefix )
-git checkout 3c5ca25 Library/Formula/gecode.rb
-brew install gecode
-git checkout -- Library/Formula/gecode.rb
-
-# Launch all
-brew services start elasticsearch
-brew services start php55
-brew services start mysql
-brew services start redis
-brew services start memcached
-brew services start rabbitmq
-sudo brew services start nginx
 
 # Applications
 brew install vim --override-system-vi
@@ -41,7 +18,16 @@ brew install macvim
 brew linkapps
 brew tap phinze/cask
 brew install brew-cask
-brew cask install adium dropbox google-chrome iterm2 launchrocket onepassword pandoc sequel-pro slack spectacle vagrant virtualbox
+brew cask install dropbox google-chrome iterm2 launchrocket onepassword pandoc sequel-pro slack spectacle vagrant virtualbox
+
+brew tap homebrew/dupes
+brew tap homebrew/php
+brew install php56 --with-fpm --with-imap --with-homebrew-openssl --with-homebrew-curl --with-homebrew-libxslt --without-snmp
+brew install php56-amqp php56-mcrypt php56-memcached php56-redis php56-yaml
+brew install composer node mysql nginx redis maven graphviz elasticsearch fswatch curl tree php-cs-fixer gecode
+npm install -g grunt-cli
+npm install -g bower
+rm /usr/local/Cellar/mysql/*/my.cnf
 
 # autocompletion
 brew tap homebrew/completions
@@ -55,7 +41,7 @@ bundle install
 pip install json carbon whisper
 
 # Update PHP Conf
-echo "memory_limit = 2048M" >> /usr/local/etc/php/5.5/php.ini
-echo "post_max_size = 16M" >> /usr/local/etc/php/5.5/php.ini
-echo "upload_max_filesize = 16M" >> /usr/local/etc/php/5.5/php.ini
-echo "date.timezone = 'Europe/Paris'" >> /usr/local/etc/php/5.5/php.ini
+echo "memory_limit = 2048M" >> /usr/local/etc/php/5.6/php.ini
+echo "post_max_size = 16M" >> /usr/local/etc/php/5.6/php.ini
+echo "upload_max_filesize = 16M" >> /usr/local/etc/php/5.6/php.ini
+echo "date.timezone = 'Europe/Paris'" >> /usr/local/etc/php/5.6/php.ini
