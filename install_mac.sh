@@ -20,6 +20,8 @@ brew tap phinze/cask
 brew install brew-cask
 brew cask install dropbox google-chrome iterm2 launchrocket onepassword pandoc sequel-pro slack spectacle vagrant virtualbox
 
+pip install pjson
+
 brew tap homebrew/dupes
 brew tap homebrew/php
 brew install php56 --with-fpm --with-imap --with-homebrew-openssl --with-homebrew-curl --with-homebrew-libxslt --without-snmp
