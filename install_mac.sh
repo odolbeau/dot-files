@@ -10,7 +10,7 @@ xcode-select --install
 sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 prefs DisconnectOnLogout=NO
 
 mkdir -p ~/Library/LaunchAgents
-brew install git wget autoconf bash coreutils ack bash-completion ruby python watch go
+brew install git wget autoconf bash coreutils ack bash-completion ruby python watch go phpunit
 
 # Applications
 brew install vim --override-system-vi
