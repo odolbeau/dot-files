@@ -23,7 +23,7 @@ brew cask install dropbox google-chrome iterm2 launchrocket onepassword pandoc s
 brew tap homebrew/dupes
 brew tap homebrew/php
 brew install php56 --with-fpm --with-imap --with-homebrew-openssl --with-homebrew-curl --with-homebrew-libxslt --without-snmp
-brew install php56-amqp php56-mcrypt php56-memcached php56-redis php56-yaml
+brew install php56-amqp php56-mcrypt php56-memcached php56-redis php56-yaml php56-apcu php56-twig
 brew install composer node mysql nginx redis maven graphviz elasticsearch fswatch curl tree php-cs-fixer gecode
 npm install -g grunt-cli
 npm install -g bower
