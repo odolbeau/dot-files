@@ -26,7 +26,15 @@ brew tap homebrew/dupes
 brew tap homebrew/php
 brew install php56 --with-fpm --with-imap --with-homebrew-openssl --with-homebrew-curl --with-homebrew-libxslt --without-snmp
 brew install php56-amqp php56-mcrypt php56-memcached php56-redis php56-yaml php56-apcu php56-twig
-brew install composer node mysql nginx redis maven graphviz elasticsearch fswatch curl tree php-cs-fixer gecode
+
+# Update PHP Conf
+echo "memory_limit = 2048M" >> /usr/local/etc/php/5.6/php.ini
+echo "post_max_size = 16M" >> /usr/local/etc/php/5.6/php.ini
+echo "upload_max_filesize = 16M" >> /usr/local/etc/php/5.6/php.ini
+echo "date.timezone = 'Europe/Paris'" >> /usr/local/etc/php/5.6/php.ini
+echo "phar.readonly = Off" >> /usr/local/etc/php/5.6/php.ini
+
+brew install composer node mysql nginx redis maven graphviz elasticsearch fswatch curl tree php-cs-fixer gecode php-cs-fixer
 npm install -g grunt-cli
 npm install -g bower
 rm /usr/local/Cellar/mysql/*/my.cnf
@@ -41,9 +49,3 @@ sudo gem pristine --all --only-executables
 sudo gem install bundler
 bundle install
 pip install json carbon whisper
-
-# Update PHP Conf
-echo "memory_limit = 2048M" >> /usr/local/etc/php/5.6/php.ini
-echo "post_max_size = 16M" >> /usr/local/etc/php/5.6/php.ini
-echo "upload_max_filesize = 16M" >> /usr/local/etc/php/5.6/php.ini
-echo "date.timezone = 'Europe/Paris'" >> /usr/local/etc/php/5.6/php.ini
