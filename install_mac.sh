@@ -24,7 +24,7 @@ pip install pjson
 
 brew tap homebrew/dupes
 brew tap homebrew/php
-brew install php56 --with-fpm --with-imap --with-homebrew-openssl --with-homebrew-curl --with-homebrew-libxslt --without-snmp
+brew install php56 --with-fpm --with-imap --with-homebrew-curl --with-homebrew-libxslt --without-snmp
 brew install php56-amqp php56-mcrypt php56-memcached php56-redis php56-yaml php56-apcu php56-twig
 
 # Update PHP Conf
