@@ -21,6 +21,7 @@ brew install brew-cask
 brew cask install dropbox google-chrome iterm2 launchrocket onepassword pandoc sequel-pro slack spectacle vagrant virtualbox
 
 pip install pjson
+pip install elasticsearch-curator
 
 brew tap homebrew/dupes
 brew tap homebrew/php
