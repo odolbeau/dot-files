@@ -46,7 +46,7 @@ if [ $has_brew -eq 1 ]; then
 	export PATH="$(brew --prefix ruby)/bin:$PATH"
 fi
 
-export GOPATH="/space/others/go"
+export GOPATH="/space/go"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
