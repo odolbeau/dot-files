@@ -149,27 +149,12 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
-	<key>NSTableView Columns KeyBingingTable</key>
-	<array>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATCG
-		</data>
-		<string>198</string>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATGG
-		</data>
-		<string>302</string>
-	</array>
-	<key>NSTableView Hidden Columns KeyBingingTable</key>
-	<array/>
-	<key>NSTableView Sort Ordering KeyBingingTable</key>
-	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 110 924 485 0 0 1440 877 </string>
+	<string>269 110 924 485 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 13 1438 864 0 0 1440 877 </string>
+	<string>0 304 570 473 0 0 1280 777 </string>
+	<key>NeverWarnAboutShortLivedSessions_A15219C7-B297-4E29-A697-75F09E1DC7C8</key>
+	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B1310767-78F1-4D70-98B2-C6F45D179134</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B97EBCAF-C62F-4A26-BC97-61BBD97FE253</key>
@@ -1260,7 +1245,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh -t comtools1.short "tmux attach -t SYNCHRO"</string>
+			<string>ssh -t comtools1.prod.par-1.h.blbl.cr. "tmux attach -t SYNCHRO"</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2023,7 +2008,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-11-03T01:47:46Z</date>
+	<date>2014-12-08T14:54:32Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2069,6 +2054,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20141022</string>
+	<string>2.0.0.20141103</string>
 </dict>
 </plist>
