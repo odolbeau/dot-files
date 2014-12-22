@@ -60,9 +60,8 @@ alias blaindextripoffer='ssh vbbcwork1 "sudo -u www-data /space/products/console
 alias blaindexmember='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:member --id="'
 alias gov3='cd /space/products/bbcthree/comuto3'
 alias goworkers='cd /space/products/workers'
-alias godomain='cd /space/products/domain'
+alias gocommonds='cd /space/products/commands'
 alias gochef='cd /space/products/chef/chef'
-alias godevvm='cd /space/products/admin/dev-vm'
 alias gomisc='cd /space/products/misc'
 alias goadmin='cd /space/products/admin'
 
