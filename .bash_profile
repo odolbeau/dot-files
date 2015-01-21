@@ -7,6 +7,7 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 export EC2_URL="https://ec2.eu-west-1.amazonaws.com"
 export DOCKER_HOST=tcp://
 export HISTTIMEFORMAT="%d/%m/%y %T "
+export HOSTFILE="$HOME/.bbchosts_completion/hosts.cache"
 
 [ -f /usr/libexec/java_home ] && export JAVA_HOME=`/usr/libexec/java_home`
 
