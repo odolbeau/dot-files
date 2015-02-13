@@ -58,6 +58,7 @@ alias blacroncheck='redis-cli -h vbbcredis2.short -n 3 KEYS "cron:*"'
 alias blacronclean='blacroncheck | xargs -n 30 redis-cli -h pmk-redis-write -n 3 DEL'
 alias blaindextripoffer='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:tr --id="'
 alias blaindexmember='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:member --id="'
+alias blav3prodversion="knife ssh \"(role:vbbcbackoffice OR role:vbbcfront OR role:bbcfront OR role:bbcbatch OR role:vbbcwork) AND NOT role:chef-disabled\" \"cat /space/products/comuto3/CURRENT\""
 alias gov3='cd /space/products/bbcthree/comuto3'
 alias goworkers='cd /space/products/workers'
 alias gocommonds='cd /space/products/commands'
