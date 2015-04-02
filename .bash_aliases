@@ -20,6 +20,7 @@ alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias count_mysql_connections='watch -n 1 "mysql -uroot -e \"show processlist;\" | wc -l"'
 alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+alias getbamboopowers='ssh vbbcbamboo1.prod.par-1.h.blbl.cr "ssh-add /space/atlassian/application-data/bamboo/xml-data/configuration/elasticbamboo.pk"'
 
 # Git
 alias g='git'
