@@ -10,6 +10,7 @@ Really simple...
     ln -s dot-files/.bash_aliases   .bash_aliases
     ln -s dot-files/.bash_profile   .bash_profile
     ln -s dot-files/.bash_prompt    .bash_prompt
+    ln -s dot-files/.gemrc          .gemrc
     ln -s dot-files/.gitconfig      .gitconfig
     ln -s dot-files/.gitignore      .gitignore
     ln -s dot-files/.inputrc        .inputrc
