@@ -27,6 +27,7 @@
     wip = !git add -A && git ci -m 'WIP'
     pr = !sh -c 'stash pull-request $0 master'
     rsup = !git fetch upstream && git reset --hard upstream/master
+    rup = !git fetch upstream && git rebase upstream/master
 [color]
     branch = auto
     diff = auto
