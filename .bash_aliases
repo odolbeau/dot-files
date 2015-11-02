@@ -29,7 +29,6 @@ alias gfmm='git fetch -p && git merge origin/master'
 alias gfrm='git fetch -p && git rebase origin/master'
 alias gfr='git fetch -p && git rebase '
 alias gp='git pull'
-alias gdb='git br -d'
 
 # PHP
 alias phptags='ctags -R --PHP-kinds=+cf -f tags.vendors vendor && ctags -R --PHP-kinds=+cf src'
@@ -64,7 +63,7 @@ alias blacroncheck='redis-cli -h vbbcredis2.short -n 3 KEYS "cron:*"'
 alias blacronclean='blacroncheck | xargs -n 30 redis-cli -h pmk-redis-write -n 3 DEL'
 alias blaindextripoffer='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:tr --id="'
 alias blaindexmember='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:member --id="'
-alias blav3prodversion="knife ssh -x root \"(role:vbbcbackoffice OR role:vbbcfront OR role:frontnginx OR role:bbcbatch OR role:vbbcwork) AND NOT role:chef-disabled\" \"cat /space/products/comuto3/CURRENT\""
+alias blav3prodversion="knife ssh -x root \"(roles:backoffice OR roles:vbbcfront OR roles:frontnginx OR roles:bbcbatch OR roles:workv3) AND NOT role:chef-disabled\" \"cat /space/products/comuto3/CURRENT\""
 alias gov3='cd /space/products/bbcthree/comuto3'
 alias goworkers='cd /space/products/workers'
 alias gocommonds='cd /space/products/commands'
@@ -73,9 +72,46 @@ alias gocookbooks='cd /space/products/chef/cookbooks'
 alias gomisc='cd /space/products/misc'
 alias goadmin='cd /space/products/admin'
 
+# Chef
+alias keffcc="knife environment from file /space/products/chef/chef/environments/cm_current.json"
+alias kcu="knife cookbook upload --freeze"
+alias kcuf="knife cookbook upload --force"
+alias kcd="knife cookbook delete"
+alias kcs="knife cookbook show"
+alias kcl="knife cookbook list"
+alias kns="knife node show"
+alias kne="knife node edit"
+alias knd="knife node delete"
+alias knl="knife node list"
+alias krs="knife role show"
+alias krd="knife role delete"
+alias kre="knife role edit"
+alias kre="knife role list"
+alias kcld="knife client delete"
+alias kdbs="knife data bag show"
+alias kdbl="knife data bag list"
+alias kdbss="knife data bag show --secret-file /space/products/chef/bootstrap/chef_secret_key"
+alias kdbff="knife data bag from file"
+
 # EC2
 function aws-sts-decode-authorization-message {
     aws sts decode-authorization-message --encoded-message $1 | sed 's/\\//g' | sed 's/"{"/{"/' | sed 's/}}}"/}}}/'
+}
+
+function ksnbyrecipe {
+    recipe=default
+    if [ $# -eq 2 ]; then
+        recipe=$2
+    fi
+    knife search "recipes:$1\:\:$recipe"
+}
+
+function kupdatenodes {
+    recipe=default
+    if [ $# -eq 2 ]; then
+        recipe=$2
+    fi
+    knife ssh -x root "recipes:$1\:\:$recipe" "chef-client"
 }
 
 # Usage: find ... | delete_trailing_spaces
