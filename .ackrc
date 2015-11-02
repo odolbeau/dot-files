@@ -16,3 +16,4 @@
 --type-set=json=.json
 --type-set=feature=.feature
 --type-set=erb=.erb
+--type-set=md=.md
