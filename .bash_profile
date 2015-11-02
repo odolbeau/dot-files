@@ -8,6 +8,8 @@ export DOCKER_HOST=tcp://
 export HISTTIMEFORMAT="%d/%m/%y %T "
 export HOSTFILE="$HOME/.bbchosts_completion/hosts.cache"
 
+eval "$(/space/products/admin/bbc-command/bin/bbc init -)"
+
 [ -f /usr/libexec/java_home ] && export JAVA_HOME=`/usr/libexec/java_home`
 
 export JBOSS_HOME=/usr/local/opt/jboss-as/libexec
