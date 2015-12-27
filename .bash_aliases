@@ -11,7 +11,7 @@ alias rl_es='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch
 alias rl_indexer='launchctl unload ~/Library/LaunchAgents/blablacar.indexer.plist && launchctl load ~/Library/LaunchAgents/blablacar.indexer.plist'
 alias rl_fpm='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.php56.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist'
 alias rl_redis='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
-alias rl_mysql='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist'
+alias rl_mysql='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql56.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql56.plist'
 alias rl_rabbitmq='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist'
 alias rl_profile='source ~/.bash_profile'
 
@@ -51,19 +51,11 @@ alias sfcdg='sfcd | grep'
 
 # BlaBlaCar
 alias blatail='tail -f app/logs/*.log app/logs/*/*/*.log /tmp/v3worker_*.log'
-alias blatrans='php app/console blablacar:translation:update --force; php app/console blablacar:translation:update; rm -Rf app/cache/*'
 alias blainitslotgithook='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot-githook.sh"'
 alias blainitslot='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot2.sh"'
 alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
-alias blaconsumev3='ssh vbbcwork1 "sudo -u www-data /space/products/comuto3/prod/app/console blablacar:worker:consume --env=prod --no-debug --max-messages=10"'
-alias blaconsumemailworker='ssh vbbcwork1 "sudo -u www-data /space/products/mail-worker/prod/console consume --max-messages=100"'
-alias blaconsumesmsworker='ssh vbbcwork1 "sudo -u www-data /space/products/smsworker/prod/smsworker consume --max-messages=100"'
-alias blaconsumeconsole='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console indexer:consume --max-messages=1000"'
-alias blacroncheck='redis-cli -h vbbcredis2.short -n 3 KEYS "cron:*"'
-alias blacronclean='blacroncheck | xargs -n 30 redis-cli -h pmk-redis-write -n 3 DEL'
-alias blaindextripoffer='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:tr --id="'
-alias blaindexmember='ssh vbbcwork1 "sudo -u www-data /space/products/console/prod/console pu:member --id="'
-alias blav3prodversion="knife ssh -x root \"(roles:backoffice OR roles:vbbcfront OR roles:frontnginx OR roles:bbcbatch OR roles:workv3) AND NOT role:chef-disabled\" \"cat /space/products/comuto3/CURRENT\""
+alias blaindexmembers='/space/products/commands/user/console in:all && /space/products/workers/indexer-member/console consume indexer_member -i -vv'
+alias blaindextripoffers='/space/products/commands/indexer-tripoffer/console pu:all && /space/products/workers/indexer-tripoffer/console consume indexer_tripoffer -i -vv'
 alias gov3='cd /space/products/bbcthree/comuto3'
 alias goworkers='cd /space/products/workers'
 alias gocommonds='cd /space/products/commands'
@@ -71,6 +63,7 @@ alias gochef='cd /space/products/chef/chef'
 alias gocookbooks='cd /space/products/chef/cookbooks'
 alias gomisc='cd /space/products/misc'
 alias goadmin='cd /space/products/admin'
+alias gogateway='cd /space/products/gateway/gateway'
 
 # Chef
 alias keffcc="knife environment from file /space/products/chef/chef/environments/cm_current.json"
@@ -124,3 +117,5 @@ function delete_trailing_spaces {
 function print_stats {
     xargs -L 1 wc -l | awk '{l+=$0} {f+=1} END {print "lines: " l} END {print "files: " f}'
 }
+
+eval "$(chef shell-init bash)"

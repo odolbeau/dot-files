@@ -6,7 +6,6 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.0/libexec"
 export EC2_URL="https://ec2.eu-west-1.amazonaws.com"
 export DOCKER_HOST=tcp://
 export HISTTIMEFORMAT="%d/%m/%y %T "
-export HOSTFILE="$HOME/.bbchosts_completion/hosts.cache"
 
 eval "$(/space/products/admin/bbc-command/bin/bbc init -)"
 
@@ -42,6 +41,7 @@ export PATH="${JBOSS_HOME}/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 export PATH="~/.composer/vendor/bin:$PATH"
+export PATH="/space/products/dkr/build-tools/bin:$PATH"
 
 if [ $has_brew -eq 1 ]; then
 	export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
@@ -68,3 +68,13 @@ man() {
 
 # Change default ulimit to avoir errors
 ulimit -n 1024
+
+# coreos-vagrant
+export DOCKER_HOST=tcp://127.0.0.1:2375
+_coreos_vagrant() {
+    ( cd /space/products/dkr/coreos-vagrant && \
+        vagrant $* )
+}
+alias boot2coreos=_coreos_vagrant
+# use the same completion as for vagrant
+complete _vagrant _coreos_vagrant
