@@ -2,7 +2,7 @@
 alias ls='ls --color'
 alias ll='ls -lh'
 alias la='ls -ahl'
-alias v='mvim'
+alias v='gvim'
 
 alias fuck='sudo $(history -p \!\!)'
 
@@ -118,4 +118,4 @@ function print_stats {
     xargs -L 1 wc -l | awk '{l+=$0} {f+=1} END {print "lines: " l} END {print "files: " f}'
 }
 
-eval "$(chef shell-init bash)"
+command -v foo >/dev/null 2>&1 && eval "$(chef shell-init bash)"
