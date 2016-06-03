@@ -119,7 +119,7 @@ export CLICOLOR=1
 #export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
-[ -f /space/products/admin/bb-command/bin/bbc ] && eval "$(/space/products/admin/bbc-command/bin/bbc init -)"
+[ -x /space/products/admin/bbc-command/bin/bbc ] && eval "$(/space/products/admin/bbc-command/bin/bbc init -)"
 
 if [ -f ~/.bash_secret ]; then
 	. ~/.bash_secret
@@ -131,13 +131,10 @@ fi
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="${JBOSS_HOME}/bin:$PATH"
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/usr/local/opt/go/libexec/bin:$PATH"
-export PATH="~/.composer/vendor/bin:$PATH"
-export PATH="/space/products/dkr/build-tools/bin:$PATH"
+export PATH="/space/products/rkt/build-tools/bin:$PATH"
+
+command -v chef >/dev/null 2>&1 && eval "$(chef shell-init bash)"
+command -v bwatagan >/dev/null 2>&1 && eval "$(bwatagan completions)"
 
 export GOPATH="/space/go"
 
@@ -156,13 +153,3 @@ man() {
 
 # Change default ulimit to avoir errors
 ulimit -n 1024
-
-# coreos-vagrant
-export DOCKER_HOST=tcp://127.0.0.1:2375
-_coreos_vagrant() {
-    ( cd /space/products/dkr/coreos-vagrant && \
-        vagrant $* )
-}
-alias boot2coreos=_coreos_vagrant
-# use the same completion as for vagrant
-complete _vagrant _coreos_vagrant

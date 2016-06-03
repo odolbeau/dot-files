@@ -13,7 +13,7 @@ alias rl_fpm='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.php56.plist 
 alias rl_redis='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
 alias rl_mysql='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql56.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql56.plist'
 alias rl_rabbitmq='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist'
-alias rl_profile='source ~/.bash_profile'
+alias rl_profile='source ~/.bashrc'
 
 # Others
 alias updatedb='sudo /usr/libexec/locate.updatedb'
@@ -117,5 +117,3 @@ function delete_trailing_spaces {
 function print_stats {
     xargs -L 1 wc -l | awk '{l+=$0} {f+=1} END {print "lines: " l} END {print "files: " f}'
 }
-
-command -v foo >/dev/null 2>&1 && eval "$(chef shell-init bash)"
