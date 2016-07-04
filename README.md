@@ -16,6 +16,11 @@ Really simple...
     ln -s dot-files/.inputrc        .inputrc
     ln -s dot-files/.screenrc       .screenrc
 
+## Additional configuration
+
+    mkdir ~/.config
+    ln -s dot-files/.config/terminator .config/terminator
+
 ## Installing Mac
 
     ln -s dot-files/.osx            .osx

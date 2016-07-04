@@ -1,0 +1,62 @@
+[global_config]
+  inactive_color_offset = 0.6
+  suppress_multiple_term_dialog = True
+  title_hide_sizetext = True
+[keybindings]
+  cycle_next = None
+  cycle_prev = None
+  move_tab_left = None
+  move_tab_right = None
+  next_tab = <Primary>Tab
+  prev_tab = <Primary><Shift>Tab
+  split_horiz = <Primary><Shift>o
+  split_vert = <Primary><Shift>e
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 884269f0-3e7d-40f4-b3df-8335ed4e1a4c
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:27
+      size = 1920, 1016
+      title = /bin/bash
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+      uuid = 884269f0-3e7d-40f4-b3df-8335ed4e1a4c
+  [[deploy]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 884269f0-3e7d-40f4-b3df-8335ed4e1a4c
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:27
+      size = 1920, 1016
+      title = /bin/bash
+      type = Window
+    [[[terminal1]]]
+      command = "ssh bastion vdeploy1.prod.par-1.h.blbl.cr -t -l dev 'tmux -L tmux_odolbeau new-session -A -s odolbeau'"
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+      uuid = 884269f0-3e7d-40f4-b3df-8335ed4e1a4c
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_image = None
+    font = Sans 12
+    foreground_color = "#839496"
+    scroll_on_output = False
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
