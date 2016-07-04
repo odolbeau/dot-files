@@ -64,6 +64,7 @@ alias gocookbooks='cd /space/products/chef/cookbooks'
 alias gomisc='cd /space/products/misc'
 alias goadmin='cd /space/products/admin'
 alias gogateway='cd /space/products/gateway/gateway'
+alias gobuildtools='cd /space/products/rkt/build-tools'
 
 # Chef
 alias keffcc="knife environment from file /space/products/chef/chef/environments/cm_current.json"
