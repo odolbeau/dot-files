@@ -19,7 +19,8 @@ Really simple...
 ## Additional configuration
 
     mkdir ~/.config
-    ln -s dot-files/.config/terminator .config/terminator
+    cd ~/.config
+    ln -s ../dot-files/.config/terminator/ ./terminator
 
 ## Installing Mac
 
