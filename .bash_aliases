@@ -56,6 +56,7 @@ alias blainitslot='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/
 alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
 alias blaindexmembers='/space/products/commands/user/console in:all && /space/products/workers/indexer-member/console consume indexer_member -i -vv'
 alias blaindextripoffers='/space/products/commands/indexer-tripoffer/console pu:all && /space/products/workers/indexer-tripoffer/console consume indexer_tripoffer -i -vv'
+alias blasatisupdate='ssh bastion.corp.blablacar.net comtools1.prod.par-1.h.blbl.cr -ldev "cd /space/products/composer-packages/satis/ && sudo -u www-data ./bin/satis build packages/comuto3.json www/"'
 alias gov3='cd /space/products/bbcthree/comuto3'
 alias goworkers='cd /space/products/workers'
 alias gocommonds='cd /space/products/commands'
