@@ -14,7 +14,8 @@ install: prepare_install
 	@if [ ! -d ${HOME}/.config ]; then mkdir ~/.config; fi
 
 	# Install applications specific configuration
-	@if [ ! -L ${HOME}/.config/terminator ]; then ln -s ${HOME}/dot-files/.config/terminator ${HOME}/.config/terminator; fi
+	@$(MAKE) APP=ggn install_application_config
+	@$(MAKE) APP=terminator install_application_config
 
 prepare_install:
 	@if [ -f ${HOME}/.bashrc ] && [ ! -L ${HOME}/.bashrc ]; then rm ${HOME}/.bashrc; fi
@@ -25,4 +26,12 @@ ifndef DOT_FILE
 endif
 	@if [ ! -L ${HOME}/.${DOT_FILE} ]; then \
 		ln -s ${HOME}/dot-files/.${DOT_FILE} ${HOME}/.${DOT_FILE}; \
+	fi \
+
+install_application_config:
+ifndef APP
+	$(error APP is undefined)
+endif
+	@if [ ! -L ${HOME}/.config/${APP} ]; then \
+		ln -s ${HOME}/dot-files/.config/${APP} ${HOME}/.config/${APP}; \
 	fi \
