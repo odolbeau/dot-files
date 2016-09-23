@@ -132,6 +132,7 @@ export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/space/products/rkt/build-tools/bin:$PATH"
+export PATH="/space/products/dev/bwatagan/bin:$PATH"
 export PATH="~/.composer/vendor/bin:$PATH"
 
 command -v chef >/dev/null 2>&1 && eval "$(chef shell-init bash)"
