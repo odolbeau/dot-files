@@ -8,6 +8,7 @@
 [http]
     sslVerify = false
 [alias]
+    amend = commit --amend --no-edit
     ci   = commit
     di   = diff
     sdi  = diff --staged
