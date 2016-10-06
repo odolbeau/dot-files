@@ -128,18 +128,19 @@ if [ -f ~/.bash_prompt ]; then
 	. ~/.bash_prompt
 fi
 
+export GOPATH="/space/go"
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/space/products/rkt/build-tools/bin:$PATH"
 export PATH="/space/products/dev/bwatagan/bin:$PATH"
 export PATH="~/.composer/vendor/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 
 command -v chef >/dev/null 2>&1 && eval "$(chef shell-init bash)"
 command -v bwatagan >/dev/null 2>&1 && eval "$(bwatagan completions)"
-
-export GOPATH="/space/go"
-export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 
 # Color man entries
 man() {
