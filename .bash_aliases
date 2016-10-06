@@ -127,8 +127,8 @@ function fork() {
   fi
 
   # Move to where forks live and clone the original repo.
-  cd $GITHUB_FORKS_DIR
-  git clone https://github.com/${1}.git
+  cd /space/github/forks
+  git clone git://github.com/${1}.git
 
   # Strip the "author/" prefix from "author/repo" for the directory name
   cd $(echo $1 | sed 's/.*\///')
