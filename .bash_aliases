@@ -119,3 +119,19 @@ function delete_trailing_spaces {
 function print_stats {
     xargs -L 1 wc -l | awk '{l+=$0} {f+=1} END {print "lines: " l} END {print "files: " f}'
 }
+
+# Fork a repo like a boss!
+function fork() {
+  if [ "$#" -ne 1 ]; then
+    echo "USAGE: fork author/repo"
+  fi
+
+  # Move to where forks live and clone the original repo.
+  cd $GITHUB_FORKS_DIR
+  git clone https://github.com/${1}.git
+
+  # Strip the "author/" prefix from "author/repo" for the directory name
+  cd $(echo $1 | sed 's/.*\///')
+
+  hub fork
+}

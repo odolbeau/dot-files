@@ -131,6 +131,8 @@ fi
 export GOPATH="/space/go"
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 
+export GITHUB_FORKS_DIR="/spage/github/forks"
+
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
