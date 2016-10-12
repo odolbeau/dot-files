@@ -136,3 +136,17 @@ function fork() {
 
   hub fork
 }
+
+# Clone a repo like a boss!
+function clone() {
+  if [ "$#" -ne 1 ]; then
+    echo "USAGE: clone author/repo"
+  fi
+
+  # Move to where forks live and clone the original repo.
+  cd /space/github/forks
+  git clone git://github.com/${1}.git
+
+  # Strip the "author/" prefix from "author/repo" for the directory name
+  cd $(echo $1 | sed 's/.*\///')
+}
