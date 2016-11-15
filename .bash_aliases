@@ -51,8 +51,7 @@ alias sfcdg='sfcd | grep'
 
 # BlaBlaCar
 alias blatail='tail -f app/logs/*.log app/logs/*/*/*.log /tmp/v3worker_*.log'
-alias blainitslotgithook='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot-githook.sh"'
-alias blainitslot='ssh comtools1 "sudo -u www-data /space/products/comuto3/misc/init-slot2.sh"'
+alias blainitslot='ssh bastion comtools1.prod.par-1.h.blbl.cr -ldev "sudo -u www-data /space/products/meps/bin/scripts/init-slot2.sh"'
 alias blacheckbranches='git br -a --merged | grep -v master | grep -v stable'
 alias blaindexmembers='/space/products/commands/user/console in:all && /space/products/workers/indexer-member/console consume indexer_member -i -vv'
 alias blaindextripoffers='/space/products/commands/indexer-tripoffer/console pu:all && /space/products/workers/indexer-tripoffer/console consume indexer_tripoffer -i -vv'
