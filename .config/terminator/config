@@ -30,6 +30,25 @@
       profile = default
       type = Terminal
       uuid = 884269f0-3e7d-40f4-b3df-8335ed4e1a4c
+  [[IRC]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 884269f0-3e7d-40f4-b3df-8335ed4e1a4c
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:27
+      size = 1920, 1016
+      title = /bin/bash
+      type = Window
+    [[[terminal1]]]
+      command = "ssh sd67004 -t 'tmux  new-session -A -s irssi'"
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+      uuid = 884269f0-3e7d-40f4-b3df-8335ed4e1a4c
   [[deploy]]
     [[[child0]]]
       fullscreen = False
