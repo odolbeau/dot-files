@@ -30,6 +30,7 @@
     pr = !sh -c 'stash pull-request $0 master'
     rsup = !git fetch upstream && git reset --hard upstream/master
     rup = !git fetch upstream && git rebase upstream/master
+    fa = !git remote | xargs -n 1 git fetch -p
 [color]
     branch = auto
     diff = auto
