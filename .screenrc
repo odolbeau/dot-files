@@ -1,3 +1,0 @@
-# Disable the startup message
-startup_message off
-caption always "%{Yb} %02d-%02m-%Y %0c %{k}|%{C} %H %{k}|%{G} %l %{k}|%{W} %-Lw%{R}%n %t%{W}%+Lw"

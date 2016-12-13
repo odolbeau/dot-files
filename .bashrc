@@ -119,8 +119,6 @@ export CLICOLOR=1
 #export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
-[ -x /space/products/admin/bbc-command/bin/bbc ] && eval "$(/space/products/admin/bbc-command/bin/bbc init -)"
-
 if [ -f ~/.bash_secret ]; then
 	. ~/.bash_secret
 fi
@@ -134,13 +132,10 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/space/products/rkt/build-tools/bin:$PATH"
-export PATH="/space/products/dev/bwatagan/bin:$PATH"
 export PATH="~/.composer/vendor/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
 command -v chef >/dev/null 2>&1 && eval "$(chef shell-init bash)"
-command -v bwatagan >/dev/null 2>&1 && eval "$(bwatagan completions)"
 
 # Color man entries
 man() {
