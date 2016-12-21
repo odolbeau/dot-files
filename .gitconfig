@@ -19,17 +19,13 @@
     co   = checkout
     cp   = cherry-pick
     cat  = cat-file -p
-    lga  = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cd)%Creset' --abbrev-commit --date=short
-    lg   = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
-    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lga  = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cd)%Creset' --abbrev-commit --date=iso ./
+    lg   = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative ./
     authors = shortlog -sn --no-merges
     fetch = fetch -p
-    mepv3 = !git lg $(ssh comtools1.prod.par-1.h.blbl.cr. cat /space/products/comuto3/prod/SHA1)..origin/master
     brd = !git branch --merged | grep -v master | xargs git branch -d
     wip = !git add -A && git ci -m 'WIP'
-    pr = !sh -c 'stash pull-request $0 master'
     rsup = !git fetch upstream && git reset --hard upstream/master
-    rup = !git fetch upstream && git rebase upstream/master
     fa = !git remote | xargs -n 1 git fetch -p
 [color]
     branch = auto
