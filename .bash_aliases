@@ -31,7 +31,7 @@ alias sfpu='pu -c app'
 alias sfpus='sfpu --stop-on-failure'
 alias sfpuf='sfpu --filter'
 alias sfpud='sfpu --debug'
-alias sfcd='php bin/console container:debug --show-private'
+alias sfcd='php bin/console debug:container --show-private'
 alias sfcdg='sfcd | grep'
 
 # Go!
