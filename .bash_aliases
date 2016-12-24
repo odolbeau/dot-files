@@ -6,6 +6,9 @@ alias v='gvim'
 
 alias fuck='sudo $(history -p \!\!)'
 
+# Folders
+alias ..="cd .."
+
 # reload
 alias rl_profile='source ~/.bashrc'
 
