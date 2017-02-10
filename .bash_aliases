@@ -39,6 +39,7 @@ alias sfcdg='sfcd | grep'
 
 # Go!
 alias gogithub='cd /space/github'
+alias gospoted='cd /space/github/spoted'
 
 # Chef
 alias kcu="knife cookbook upload --freeze"
