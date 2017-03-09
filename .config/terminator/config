@@ -72,10 +72,9 @@
 [profiles]
   [[default]]
     background_color = "#002b36"
-    background_image = None
+    cursor_color = "#839496"
     font = Sans 12
     foreground_color = "#839496"
-    scroll_on_output = False
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
