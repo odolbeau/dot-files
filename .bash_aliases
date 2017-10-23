@@ -5,6 +5,7 @@ alias la='ls -ahl'
 alias v='gvim'
 
 alias fuck='sudo $(history -p \!\!)'
+alias apt-upgrade-all='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove --purge'
 
 # Folders
 alias ..="cd .."
