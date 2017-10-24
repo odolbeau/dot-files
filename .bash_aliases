@@ -16,6 +16,7 @@ alias rl_profile='source ~/.bashrc'
 # Others
 alias count_mysql_connections='watch -n 1 "mysql -uroot -e \"show processlist;\" | wc -l"'
 alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
+alias flactomp3='parallel ffmpeg -i {} -ab 320k -vcodec copy -vsync 2 {.}.mp3 ::: ./*.flac && rm *.flac'
 
 # Git
 alias g='git'
