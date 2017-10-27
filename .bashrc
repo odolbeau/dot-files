@@ -129,11 +129,12 @@ fi
 export GOPATH="/space/go"
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 
-export PATH="/usr/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="~/.composer/vendor/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
+#export PATH="~/.composer/vendor/bin:$PATH"
+
+[[ ":$PATH:" =~ ":/usr/bin:" ]] || export PATH="/usr/bin:$PATH"
+[[ ":$PATH:" =~ ":/usr/local/bin:" ]] || export PATH="/usr/local/bin:$PATH"
+[[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || export PATH="/usr/local/sbin:$PATH"
+[[ ":$PATH:" =~ ":$GOPATH/bin:" ]] || export PATH="$GOPATH/bin:$PATH"
 
 command -v chef >/dev/null 2>&1 && eval "$(chef shell-init bash)"
 
