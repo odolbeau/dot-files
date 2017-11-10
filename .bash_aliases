@@ -21,10 +21,10 @@ alias cleanmp3='parallel "ffmpeg -i {} -map a -codec:a libmp3lame -qscale:a 2 /t
 
 # Git
 alias g='git'
-alias gf='git fetch -p'
-alias gfmm='git fetch -p && git merge origin/master'
-alias gfrm='git fetch -p && git rebase origin/master'
-alias gfr='git fetch -p && git rebase '
+alias gf='git f'
+alias gfmm='git f && git merge origin/master'
+alias gfrm='git f && git rebase origin/master'
+alias gfr='git f && git rebase '
 alias gp='git pull'
 
 # sf2

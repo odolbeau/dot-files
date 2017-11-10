@@ -22,7 +22,7 @@
     lga  = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cd)%Creset' --abbrev-commit --date=iso
     lg   = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
     authors = shortlog -sn --no-merges
-    fetch = fetch -p
+    f = fetch --all -p
     brd = !git branch --merged | grep -v master | xargs git branch -d
     wip = !git add -A && git ci -m 'WIP'
     rsup = !git fetch upstream && git reset --hard upstream/master
