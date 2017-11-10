@@ -136,8 +136,6 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 [[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || export PATH="/usr/local/sbin:$PATH"
 [[ ":$PATH:" =~ ":$GOPATH/bin:" ]] || export PATH="$GOPATH/bin:$PATH"
 
-command -v chef >/dev/null 2>&1 && eval "$(chef shell-init bash)"
-
 # Color man entries
 man() {
 	env \

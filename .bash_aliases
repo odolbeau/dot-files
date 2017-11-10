@@ -44,41 +44,6 @@ alias sfcdg='sfcd | grep'
 alias gogithub='cd /space/github'
 alias gospoted='cd /space/github/spoted'
 
-# Chef
-alias kcu="knife cookbook upload --freeze"
-alias kcuf="knife cookbook upload --force"
-alias kcd="knife cookbook delete"
-alias kcs="knife cookbook show"
-alias kcl="knife cookbook list"
-alias kns="knife node show"
-alias kne="knife node edit"
-alias knd="knife node delete"
-alias knl="knife node list"
-alias krs="knife role show"
-alias krd="knife role delete"
-alias kre="knife role edit"
-alias kre="knife role list"
-alias kcld="knife client delete"
-alias kdbs="knife data bag show"
-alias kdbl="knife data bag list"
-alias kdbff="knife data bag from file"
-
-function ksnbyrecipe {
-    recipe=default
-    if [ $# -eq 2 ]; then
-        recipe=$2
-    fi
-    knife search "recipes:$1\:\:$recipe"
-}
-
-function kupdatenodes {
-    recipe=default
-    if [ $# -eq 2 ]; then
-        recipe=$2
-    fi
-    knife ssh -x root "recipes:$1\:\:$recipe" "chef-client"
-}
-
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {
     xargs perl -pi -e 's/[ ]*$//'
