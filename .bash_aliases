@@ -27,17 +27,18 @@ alias gfrm='git f && git rebase origin/master'
 alias gfr='git f && git rebase '
 alias gp='git pull'
 
-# sf2
+# PHP / Symfony
 alias scc='rm -Rf var/cache/*'
 alias pu='vendor/bin/phpunit --colors'
 alias pus='pu --stop-on-failure'
 alias puf='pu --filter'
 alias pud='pu --debug'
+alias sf='php bin/console'
 alias sfpu='pu -c app'
 alias sfpus='sfpu --stop-on-failure'
 alias sfpuf='sfpu --filter'
 alias sfpud='sfpu --debug'
-alias sfcd='php bin/console debug:container --show-private'
+alias sfcd='sf debug:container --show-private'
 alias sfcdg='sfcd | grep'
 
 # Go!
