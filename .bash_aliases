@@ -18,6 +18,7 @@ alias count_mysql_connections='watch -n 1 "mysql -uroot -e \"show processlist;\"
 alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
 alias flactomp3='parallel ffmpeg -i {} -vcodec copy -vsync 2 -map a -codec:a libmp3lame -qscale:a 2 {.}.mp3'
 alias cleanmp3='parallel "ffmpeg -i {} -map a -codec:a libmp3lame -qscale:a 2 /tmp/{/} && mv /tmp/{/} {}"'
+alias todo='vi ~/Nextcloud/Notes/TODO.txt'
 
 # Git
 alias g='git'
