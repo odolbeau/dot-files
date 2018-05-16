@@ -19,6 +19,7 @@ alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
 alias flactomp3='parallel ffmpeg -i {} -vcodec copy -vsync 2 -map a -codec:a libmp3lame -qscale:a 2 {.}.mp3'
 alias cleanmp3='parallel "ffmpeg -i {} -map a -codec:a libmp3lame -qscale:a 2 /tmp/{/} && mv /tmp/{/} {}"'
 alias todo='vi ~/Nextcloud/Notes/TODO.txt'
+alias check_website_certificate='_(){ echo | openssl s_client -showcerts -servername $1 -connect $1:443 2>/dev/null | openssl x509 -inform pem -noout -text; }; _'
 
 # Git
 alias g='git'
