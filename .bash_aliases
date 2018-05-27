@@ -6,6 +6,7 @@ alias v='gvim'
 
 alias fuck='sudo $(history -p \!\!)'
 alias apt-upgrade-all='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove --purge'
+alias ip='ip --color --brief addr show'
 
 # Folders
 alias ..="cd .."
