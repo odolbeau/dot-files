@@ -20,6 +20,7 @@ alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
 alias flactomp3='parallel ffmpeg -i {} -vcodec copy -vsync 2 -map a -codec:a libmp3lame -qscale:a 2 {.}.mp3'
 alias cleanmp3='parallel "ffmpeg -i {} -map a -codec:a libmp3lame -qscale:a 2 /tmp/{/} && mv /tmp/{/} {}"'
 alias todo='vi ~/Nextcloud/Notes/TODO.txt'
+alias notes='cd ~/Nextcloud/Notes && v && cd -'
 alias check_website_certificate='_(){ echo | openssl s_client -showcerts -servername $1 -connect $1:443 2>/dev/null | openssl x509 -inform pem -noout -text; }; _'
 
 # Git
@@ -30,6 +31,10 @@ alias gfrm='git f && git rebase origin/master'
 alias gfr='git f && git rebase '
 alias gp='git pull'
 
+# Docker
+alias dc='sudo docker-compose'
+alias dcu='dc up -d --remove-orphans --no-recreate'
+
 # PHP / Symfony
 alias scc='rm -Rf var/cache/*'
 alias pu='vendor/bin/phpunit --colors'
@@ -39,6 +44,9 @@ alias pud='pu --debug'
 alias sf='php bin/console'
 alias sfcd='sf debug:container --show-private'
 alias sfcdg='sfcd | grep'
+
+# PHP / Symfony w/ Docker
+alias dsf='sudo docker-compose exec php bin/console'
 
 # Go!
 alias gogithub='cd /space/github'
