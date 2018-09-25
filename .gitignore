@@ -3,6 +3,8 @@
 .DS_Store
 tags
 tags.vendors
+tags.lock
+tags.temp
 *~
 .classpath
 .project

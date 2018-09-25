@@ -2,7 +2,7 @@
 alias ls='ls --color'
 alias ll='ls -lh'
 alias la='ls -ahl'
-alias v='gvim'
+alias v='terminator -bme vim'
 
 alias fuck='sudo $(history -p \!\!)'
 alias apt-upgrade-all='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove --purge'
