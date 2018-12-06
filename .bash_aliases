@@ -53,6 +53,9 @@ alias dsf='sudo docker-compose exec php bin/console'
 alias gogithub='cd /space/github'
 alias gospoted='cd /space/github/spoted'
 
+# Shapin
+alias shapin_heroku_enter='heroku run --app shapin /bin/bash'
+
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {
     xargs perl -pi -e 's/[ ]*$//'
