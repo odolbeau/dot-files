@@ -45,6 +45,7 @@ alias pud='pu --debug'
 alias sf='php bin/console'
 alias sfcd='sf debug:container --show-private'
 alias sfcdg='sfcd | grep'
+alias phpsessionclear='sudo ls -1 /var/lib/php/sessions/ | xargs -I {} rm /var/lib/php/sessions/{}'
 
 # PHP / Symfony w/ Docker
 alias dsf='sudo docker-compose exec php bin/console'
