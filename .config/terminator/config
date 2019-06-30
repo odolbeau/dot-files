@@ -1,16 +1,29 @@
 [global_config]
-  inactive_color_offset = 0.6
-  suppress_multiple_term_dialog = True
   title_hide_sizetext = True
+  inactive_color_offset = 0.7
+  suppress_multiple_term_dialog = True
 [keybindings]
   cycle_next = None
   cycle_prev = None
-  move_tab_left = None
-  move_tab_right = None
-  next_tab = <Primary>Tab
-  prev_tab = <Primary><Shift>Tab
   split_horiz = <Primary><Shift>o
   split_vert = <Primary><Shift>e
+  move_tab_right = None
+  move_tab_left = None
+  next_tab = <Primary>Tab
+  prev_tab = <Primary><Shift>Tab
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    cursor_color = "#839496"
+    font = Sans 12
+    foreground_color = "#839496"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+  [[prez]]
+    background_color = "#fdf6e3"
+    cursor_color = "#aaaaaa"
+    foreground_color = "#657b83"
 [layouts]
   [[default]]
     [[[child0]]]
@@ -69,12 +82,3 @@
       type = Terminal
       uuid = 884269f0-3e7d-40f4-b3df-8335ed4e1a4c
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#002b36"
-    cursor_color = "#839496"
-    font = Sans 12
-    foreground_color = "#839496"
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
