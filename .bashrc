@@ -135,6 +135,7 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 [[ ":$PATH:" =~ ":/usr/local/bin:" ]] || export PATH="/usr/local/bin:$PATH"
 [[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || export PATH="/usr/local/sbin:$PATH"
 [[ ":$PATH:" =~ ":$GOPATH/bin:" ]] || export PATH="$GOPATH/bin:$PATH"
+[[ ":$PATH:" =~ ":$HOME/.symfony/bin:" ]] || export PATH="$HOME/.symfony/bin:$PATH"
 
 # Color man entries
 man() {
