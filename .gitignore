@@ -13,3 +13,4 @@ tags.temp
 .bundle
 .config/ggn/*.cache.*
 .phpunit.result.cache
+.php_cs.cache
