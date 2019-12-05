@@ -25,8 +25,8 @@
     f = fetch --all -p
     brd = !git branch --merged | grep -v master | xargs git branch -d
     wip = !git add -A && git ci -m 'WIP'
-    rbup = !git fetch upstream && git rebase upstream/master
-    rsup = !git fetch upstream && git reset --hard upstream/master
+    rbup = !git f && git rebase upstream/master
+    rsup = !git f && git reset --hard upstream/master
 [color]
     branch = auto
     diff = auto
