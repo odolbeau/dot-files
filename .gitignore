@@ -11,6 +11,5 @@ tags.temp
 .settings
 .bash_secret
 .bundle
-.config/ggn/*.cache.*
 .phpunit.result.cache
 .php_cs.cache

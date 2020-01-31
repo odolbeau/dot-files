@@ -14,7 +14,6 @@ install: prepare_install
 	@if [ ! -d ${HOME}/.config ]; then mkdir ~/.config; fi
 
 	# Install applications specific configuration
-	@$(MAKE) APP=ggn install_application_config
 	@$(MAKE) APP=terminator install_application_config
 
 prepare_install:
