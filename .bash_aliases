@@ -68,22 +68,6 @@ function print_stats {
     xargs -L 1 wc -l | awk '{l+=$0} {f+=1} END {print "lines: " l} END {print "files: " f}'
 }
 
-# Fork a repo like a boss!
-function fork() {
-  if [ "$#" -ne 1 ]; then
-    echo "USAGE: fork author/repo"
-  fi
-
-  # Move to where forks live and clone the original repo.
-  cd /space/github/forks
-  git clone git://github.com/${1}.git
-
-  # Strip the "author/" prefix from "author/repo" for the directory name
-  cd $(echo $1 | sed 's/.*\///')
-
-  hub fork
-}
-
 # Clone a repo like a boss!
 function clone() {
   if [ "$#" -ne 1 ]; then
@@ -91,7 +75,7 @@ function clone() {
   fi
 
   # Move to where forks live and clone the original repo.
-  cd /space/github/forks
+  cd /space/forks
   mkcd $(echo $1 | sed 's/\/.*//')
   git clone git://github.com/${1}.git
 
