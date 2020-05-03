@@ -2,7 +2,7 @@
 alias ls='ls --color'
 alias ll='ls -lh'
 alias la='ls -ahl'
-alias v='terminator -bme vim & > /dev/null 2>&1'
+alias v='terminator -me vim & > /dev/null 2>&1'
 
 alias fuck='sudo $(history -p \!\!)'
 alias apt-upgrade-all='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove --purge'
@@ -33,8 +33,9 @@ alias gfr='git f && git rebase '
 alias gp='git pull'
 
 # Docker
-alias dc='sudo docker-compose'
+alias dc='docker-compose'
 alias dcu='dc up -d --remove-orphans --no-recreate'
+alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpqa:/tmp" -w /project jakzal/phpqa:alpine'
 
 # PHP / Symfony
 alias scc='rm -Rf var/cache/*'
@@ -43,19 +44,11 @@ alias pus='pu --stop-on-failure'
 alias puf='pu --filter'
 alias pud='pu --debug'
 alias sf='php bin/console'
-alias sfcd='sf debug:container --show-private'
-alias sfcdg='sfcd | grep'
+alias sfcd='sf debug:container'
 alias phpsessionclear='sudo ls -1 /var/lib/php/sessions/ | xargs -I {} rm /var/lib/php/sessions/{}'
 
 # PHP / Symfony w/ Docker
 alias dsf='sudo docker-compose exec php bin/console'
-
-# Go!
-alias gogithub='cd /space/github'
-alias gospoted='cd /space/github/spoted'
-
-# Shapin
-alias shapin_heroku_enter='heroku run --app shapin /bin/bash'
 
 # Usage: find ... | delete_trailing_spaces
 function delete_trailing_spaces {

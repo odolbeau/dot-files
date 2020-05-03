@@ -1,6 +1,6 @@
 [user]
     name = Olivier Dolbeau
-    email = git@a.bbnt.me
+    email = github@a.bbnt.me
 [core]
     autocrlf = input
     editor = vim
@@ -27,6 +27,7 @@
     wip = !git add -A && git ci -m 'WIP'
     rbup = !git f && git rebase upstream/master
     rsup = !git f && git reset --hard upstream/master
+    brf = for-each-ref --sort=-committerdate refs/heads/ refs/remotes --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(color:yellow)%(authorname)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))'
 [color]
     branch = auto
     diff = auto
