@@ -153,3 +153,6 @@ man() {
 
 # Change default ulimit to avoir errors
 ulimit -n 1024
+
+# heroku autocomplete setup
+HEROKU_AC_BASH_SETUP_PATH=/home/bab/.cache/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
