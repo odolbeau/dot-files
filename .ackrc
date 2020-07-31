@@ -1,11 +1,11 @@
 # Ignore some dirs
---ignore-dir=cache
---ignore-dir=logs
 --ignore-dir=web/js
 --ignore-dir=web/css
 --ignore-dir=tags
 --ignore-dir=_site
 --ignore-dir=.subsplit
+--ignore-dir=**/var/cache
+--ignore-dir=**/var/log
 
 # Twig type
 --type-set=database=.database
