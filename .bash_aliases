@@ -35,6 +35,7 @@ alias gp='git pull'
 # Docker
 alias dc='docker-compose'
 alias dcu='dc up -d --remove-orphans --no-recreate'
+alias drmif='docker images | awk '"'"'{ print $3 }'"'"' | xargs -n 10 docker rmi -f'
 alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpqa:/tmp" -w /project jakzal/phpqa:alpine'
 
 # PHP / Symfony
