@@ -5,7 +5,7 @@ alias la='ls -ahl'
 alias v='terminator -me vim & > /dev/null 2>&1'
 
 alias fuck='sudo $(history -p \!\!)'
-alias apt-upgrade-all='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove --purge'
+alias apt-upgrade-all='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove --purge -y'
 alias ip='ip --color --brief addr show'
 
 # Folders
