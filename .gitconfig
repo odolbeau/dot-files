@@ -1,6 +1,6 @@
 [user]
     name = Olivier Dolbeau
-    email = github@a.bbnt.me
+    email = olivier@bbnt.me
 [core]
     autocrlf = input
     editor = vim
