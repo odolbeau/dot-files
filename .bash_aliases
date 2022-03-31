@@ -70,7 +70,7 @@ function clone() {
   # Move to where forks live and clone the original repo.
   cd /space/forks
   mkcd $(echo $1 | sed 's/\/.*//')
-  git clone git://github.com/${1}.git
+  git clone git@github.com:${1}.git
 
   # Strip the "author/" prefix from "author/repo" for the directory name
   cd $(echo $1 | sed 's/.*\///')
