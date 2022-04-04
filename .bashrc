@@ -126,17 +126,19 @@ if [ -f ~/.bash_prompt ]; then
 	. ~/.bash_prompt
 fi
 
-export GOPATH="/space/go"
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 
 #export PATH="~/.composer/vendor/bin:$PATH"
 
+[[ ":$PATH:" =~ ":/opt/local/bin:" ]] || export PATH="/opt/local/bin:$PATH"
+[[ ":$PATH:" =~ ":/opt/local/sbin:" ]] || export PATH="/opt/local/sbin:$PATH"
 [[ ":$PATH:" =~ ":/usr/bin:" ]] || export PATH="/usr/bin:$PATH"
 [[ ":$PATH:" =~ ":/usr/local/bin:" ]] || export PATH="/usr/local/bin:$PATH"
 [[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || export PATH="/usr/local/sbin:$PATH"
-[[ ":$PATH:" =~ ":$GOPATH/bin:" ]] || export PATH="$GOPATH/bin:$PATH"
 [[ ":$PATH:" =~ ":$HOME/.symfony/bin:" ]] || export PATH="$HOME/.symfony/bin:$PATH"
-[[ ":$PATH:" =~ ":$HOME/.cargo/bin:" ]] || export PATH="$HOME/.cargo/bin:$PATH"
+if which ruby > /dev/null && which gem > /dev/null; then
+    [[ ":$PATH:" =~ "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin" ]] || export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
 
 # Color man entries
 man() {
