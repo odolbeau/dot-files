@@ -2,19 +2,19 @@
 
 install: prepare_install
 	# Install dot files
-	@$(MAKE) DOT_FILE=ackrc install_dot_file
-	@$(MAKE) DOT_FILE=bash_aliases install_dot_file
-	@$(MAKE) DOT_FILE=bash_prompt install_dot_file
-	@$(MAKE) DOT_FILE=bashrc install_dot_file
-	@$(MAKE) DOT_FILE=gitconfig install_dot_file
-	@$(MAKE) DOT_FILE=gitignore install_dot_file
-	@$(MAKE) DOT_FILE=inputrc install_dot_file
+	@$(MAKE) -s DOT_FILE=ackrc install_dot_file
+	@$(MAKE) -s DOT_FILE=bash_aliases install_dot_file
+	@$(MAKE) -s DOT_FILE=bash_prompt install_dot_file
+	@$(MAKE) -s DOT_FILE=bashrc install_dot_file
+	@$(MAKE) -s DOT_FILE=gitconfig install_dot_file
+	@$(MAKE) -s DOT_FILE=gitignore install_dot_file
+	@$(MAKE) -s DOT_FILE=inputrc install_dot_file
 
 	# Create ~/.config folder if needed
 	@if [ ! -d ${HOME}/.config ]; then mkdir ~/.config; fi
 
 	# Install applications specific configuration
-	@$(MAKE) APP=terminator install_application_config
+	@$(MAKE) -s APP=terminator install_application_config
 
 prepare_install:
 	@if [ -f ${HOME}/.bashrc ] && [ ! -L ${HOME}/.bashrc ]; then rm ${HOME}/.bashrc; fi
