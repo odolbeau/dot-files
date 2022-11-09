@@ -29,8 +29,8 @@ alias check_website_certificate='_(){ echo | openssl s_client -showcerts -server
 alias g='git'
 alias gl='git l'
 alias gf='git f'
-alias gfmm='git f && git merge origin/master'
-alias gfrm='git f && git rebase origin/master'
+alias gfmm='git f && git merge origin/main'
+alias gfrm='git f && git rebase origin/main'
 alias gfr='git f && git rebase '
 alias gp='git pull'
 
