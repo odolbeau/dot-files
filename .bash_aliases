@@ -24,6 +24,7 @@ alias cleanmp3='parallel "ffmpeg -i {} -map a -codec:a libmp3lame -qscale:a 2 /t
 alias todo='vi ~/Nextcloud/Notes/TODO.txt'
 alias notes='cd ~/Nextcloud/Notes && v && cd -'
 alias check_website_certificate='_(){ echo | openssl s_client -showcerts -servername $1 -connect $1:443 2>/dev/null | openssl x509 -inform pem -noout -text; }; _'
+alias syslog='sudo journalctl --system -f -p 5 -n 100'
 
 # Git
 alias g='git'
