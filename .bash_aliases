@@ -21,8 +21,6 @@ alias count_mysql_connections='watch -n 1 "mysql -uroot -e \"show processlist;\"
 alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
 alias flactomp3='parallel ffmpeg -i {} -vcodec copy -vsync 2 -map a -codec:a libmp3lame -qscale:a 2 {.}.mp3'
 alias cleanmp3='parallel "ffmpeg -i {} -map a -codec:a libmp3lame -qscale:a 2 /tmp/{/} && mv /tmp/{/} {}"'
-alias todo='vi ~/Nextcloud/Notes/TODO.txt'
-alias notes='cd ~/Nextcloud/Notes && v && cd -'
 alias check_website_certificate='_(){ echo | openssl s_client -showcerts -servername $1 -connect $1:443 2>/dev/null | openssl x509 -inform pem -noout -text; }; _'
 alias syslog='sudo journalctl --system -f -p 5 -n 100'
 
@@ -43,12 +41,7 @@ alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpq
 
 # PHP / Symfony
 alias scc='rm -Rf var/cache/*'
-alias pu='vendor/bin/phpunit --colors'
-alias pus='pu --stop-on-failure'
-alias puf='pu --filter'
-alias pud='pu --debug'
 alias sf='php bin/console'
-alias sfcd='sf debug:container'
 alias phpsessionclear='sudo ls -1 /var/lib/php/sessions/ | xargs -I {} rm /var/lib/php/sessions/{}'
 
 # Usage: find ... | delete_trailing_spaces
