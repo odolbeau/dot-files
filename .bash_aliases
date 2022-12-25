@@ -1,7 +1,9 @@
 # ls aliases
 alias ls='ls --color'
 alias ll='ls -lh'
+complete -F _complete_alias ll
 alias la='ls -ahl'
+complete -F _complete_alias la
 alias v='terminator --working-directory `pwd` -bmue vim & > /dev/null 2>&1'
 
 alias fuck='sudo $(history -p \!\!)'
@@ -26,6 +28,7 @@ alias syslog='sudo journalctl --system -f -p 5 -n 100'
 
 # Git
 alias g='git'
+complete -F _complete_alias g
 alias gl='git l'
 alias gf='git f'
 alias gfmm='git f && git merge origin/main'
@@ -35,6 +38,7 @@ alias gp='git pull'
 
 # Docker
 alias dc='docker-compose'
+complete -F _complete_alias dc
 alias dcu='dc up -d --remove-orphans --no-recreate'
 alias drmif='docker images | awk '"'"'{ print $3 }'"'"' | xargs -n 10 docker rmi -f'
 alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpqa:/tmp" -w /project jakzal/phpqa:alpine'

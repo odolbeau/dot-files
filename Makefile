@@ -10,6 +10,10 @@ install: prepare_install
 	@$(MAKE) -s DOT_FILE=gitignore install_dot_file
 	@$(MAKE) -s DOT_FILE=inputrc install_dot_file
 
+	# Install bash completion script to complete aliases
+	@# See https://unix.stackexchange.com/a/332522
+	@sudo sh -c 'curl -s https://raw.githubusercontent.com/cykerway/complete-alias/master/complete_alias > /etc/bash_completion.d/complete_alias'
+
 	# Create ~/.config folder if needed
 	@if [ ! -d ${HOME}/.config ]; then mkdir ~/.config; fi
 
