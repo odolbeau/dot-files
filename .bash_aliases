@@ -2,7 +2,7 @@
 alias ls='ls --color'
 alias ll='ls -lh'
 alias la='ls -ahl'
-alias v='terminator --working-directory `pwd` -bme vim & > /dev/null 2>&1'
+alias v='terminator --working-directory `pwd` -bmue vim & > /dev/null 2>&1'
 
 alias fuck='sudo $(history -p \!\!)'
 alias apt-upgrade-all='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove --purge -y && calibre-upgrade && joplin-upgrade'
