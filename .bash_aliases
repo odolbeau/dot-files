@@ -44,17 +44,6 @@ alias scc='rm -Rf var/cache/*'
 alias sf='php bin/console'
 alias phpsessionclear='sudo ls -1 /var/lib/php/sessions/ | xargs -I {} rm /var/lib/php/sessions/{}'
 
-# Usage: find ... | delete_trailing_spaces
-function delete_trailing_spaces {
-    xargs perl -pi -e 's/[ ]*$//'
-}
-
-# Display number of lines & files.
-# Usage: find ... | print_stats
-function print_stats {
-    xargs -L 1 wc -l | awk '{l+=$0} {f+=1} END {print "lines: " l} END {print "files: " f}'
-}
-
 # Clone a repo like a boss!
 function clone() {
   if [ "$#" -ne 1 ]; then
