@@ -42,6 +42,8 @@ complete -F _complete_alias dc
 alias dcu='dc up -d --remove-orphans --no-recreate'
 alias drmif='docker images | awk '"'"'{ print $3 }'"'"' | xargs -n 10 docker rmi -f'
 alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpqa:/tmp" -w /project jakzal/phpqa:alpine'
+# List existing docker projects
+alias dclsp='docker ps --filter "label=com.docker.compose.project" -q | xargs docker inspect --format="{{index .Config.Labels \"com.docker.compose.project\"}}"| sort | uniq'
 
 # PHP / Symfony
 alias scc='rm -Rf var/cache/*'
