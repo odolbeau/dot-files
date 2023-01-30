@@ -1,0 +1,20 @@
+#!/bin/bash
+
+CURDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Create symbolic links for all files which sould be present in ${HOME}
+for FILE in `find ${CURDIR}/../home -maxdepth 1 -type f -printf "%f\n"`; do
+    ln -sf ${CURDIR}/../home/${FILE} ${HOME}/${FILE}
+done
+
+# Create ${HOME}/.config if needed
+if [ ! -d ${HOME}/.config ]; then mkdir ${HOME}/.config; fi
+
+# Create symbolic links for all folders which sould be present in ${HOME}/.config
+for FOLDER in `find ${CURDIR}/../home/.config -mindepth 1 -maxdepth 1 -type d -printf "%f\n"`; do
+    ln -sf ${CURDIR}/../home/.config/${FOLDER} ${HOME}/.config/${FOLDER}
+done
+
+# Install bash completion script to complete aliases
+# See https://unix.stackexchange.com/a/332522
+sudo sh -c 'curl -s https://raw.githubusercontent.com/cykerway/complete-alias/master/complete_alias > /etc/bash_completion.d/complete_alias'
