@@ -18,3 +18,5 @@ done
 # Install bash completion script to complete aliases
 # See https://unix.stackexchange.com/a/332522
 sudo sh -c 'curl -s https://raw.githubusercontent.com/cykerway/complete-alias/master/complete_alias > /etc/bash_completion.d/complete_alias'
+
+sudo ln -sf ${CURDIR}/../etc/bash.bashrc /etc/bash.bashrc
