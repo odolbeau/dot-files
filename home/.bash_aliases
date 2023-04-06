@@ -1,9 +1,8 @@
 alias v='terminator --working-directory `pwd` -bmue vim & > /dev/null 2>&1'
 
 alias fuck='sudo $(history -p \!\!)'
-alias apt-upgrade-all='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove --purge -y && calibre-upgrade && joplin-upgrade'
+alias apt-upgrade-all='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove --purge -y && sudo snap refresh && calibre-upgrade'
 alias calibre-upgrade='sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin'
-alias joplin-upgrade='wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash'
 
 # Others
 alias count_mysql_connections='watch -n 1 "mysql -uroot -e \"show processlist;\" | wc -l"'
