@@ -75,8 +75,7 @@ alias rl_profile='source ~/.bashrc'
 alias myip='ip --color --brief addr show'
 
 # Docker
-complete -F _complete_alias dc
-alias dcu='dc up -d --remove-orphans --no-recreate'
+alias dcu='dce up -d --remove-orphans --no-recreate'
 alias drmif='docker images | awk '"'"'{ print $3 }'"'"' | xargs -n 10 docker rmi -f'
 # List existing docker projects
 alias dclsp='docker ps --filter "label=com.docker.compose.project" -q | xargs docker inspect --format="{{index .Config.Labels \"com.docker.compose.project\"}}"| sort | uniq'
