@@ -75,7 +75,6 @@ alias rl_profile='source ~/.bashrc'
 alias myip='ip --color --brief addr show'
 
 # Docker
-alias dc='docker compose'
 complete -F _complete_alias dc
 alias dcu='dc up -d --remove-orphans --no-recreate'
 alias drmif='docker images | awk '"'"'{ print $3 }'"'"' | xargs -n 10 docker rmi -f'

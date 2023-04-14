@@ -12,11 +12,17 @@ if [ ! -d ${HOME}/.config ]; then mkdir ${HOME}/.config; fi
 
 # Create symbolic links for all folders which sould be present in ${HOME}/.config
 for FOLDER in `find ${CURDIR}/../home/.config -mindepth 1 -maxdepth 1 -type d -printf "%f\n"`; do
-    ln -sf ${CURDIR}/../home/.config/${FOLDER} ${HOME}/.config/${FOLDER}
+    if [ ! -L ${HOME}/.config/${FOLDER} ]; then
+        ln -sf ${CURDIR}/../home/.config/${FOLDER} ${HOME}/.config/${FOLDER}
+    fi
 done
 
 # Install bash completion script to complete aliases
 # See https://unix.stackexchange.com/a/332522
 sudo sh -c 'curl -s https://raw.githubusercontent.com/cykerway/complete-alias/master/complete_alias > /etc/bash_completion.d/complete_alias'
+
+# Install magic dce command
+# See https://github.com/odolbeau/dce
+sudo sh -c 'curl -s https://raw.githubusercontent.com/odolbeau/dce/master/dce > /usr/local/bin/dce && chmod +x /usr/local/bin/dce'
 
 sudo ln -sf ${CURDIR}/../etc/bash.bashrc /etc/bash.bashrc
