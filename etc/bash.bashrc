@@ -76,6 +76,16 @@ alias myip='ip --color --brief addr show'
 
 # Docker
 alias dcu='dce up -d --remove-orphans --no-recreate'
-alias drmif='docker images | awk '"'"'{ print $3 }'"'"' | xargs -n 10 docker rmi -f'
 # List existing docker projects
 alias dclsp='docker ps --filter "label=com.docker.compose.project" -q | xargs docker inspect --format="{{index .Config.Labels \"com.docker.compose.project\"}}"| sort | uniq'
+
+# Clean docker image & containers
+function dcclean {
+    # Remove all stopped containers
+    # See: https://docs.docker.com/engine/reference/commandline/rm/#remove-all-stopped-containers
+    docker ps --filter status=exited -q | xargs -n 5 docker rm > /dev/null 2>&1
+    # Remove unused images
+    docker image prune --all --force > /dev/null 2>&1
+    # Remove unused volumes
+    docker volume prune --force > /dev/null 2>&1
+}
