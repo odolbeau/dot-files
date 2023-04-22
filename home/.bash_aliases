@@ -26,6 +26,8 @@ alias scc='rm -Rf var/cache/*'
 alias sf='php bin/console'
 alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpqa:/tmp" -w /project jakzal/phpqa:alpine'
 
+alias at_bookstack_backup='scp altercampagne_cloud:/home/admin/nextcloud/var/bookstack-backups/backup-$(date +%F)_01-00.tar.gz ~/Nextcloud/apps/altercampagne/bookstack-backup-$(date +%F)_01-00.tar.gz'
+
 # Clone a repo like a boss!
 function clone() {
   if [ "$#" -ne 1 ]; then
