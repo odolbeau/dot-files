@@ -27,12 +27,11 @@ alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpq
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 function sf() {
-    RETURN=$(dce exec php bin/console "$@")
-    if [ "$RETURN" == 1 ]; then
-        RETURN=$(php bin/console "$@")
+    if dce ps -q php > /dev/null 2>&1; then
+        dce exec php bin/console "$@"
+    else
+        php bin/console "$@"
     fi
-
-    return "$RETURN"
 }
 
 alias at_bookstack_backup='scp altercampagne_cloud:/home/admin/nextcloud/var/bookstack-backups/backup-$(date +%F)_01-00.tar.gz ~/Nextcloud/apps/altercampagne/bookstack-backup-$(date +%F)_01-00.tar.gz'
