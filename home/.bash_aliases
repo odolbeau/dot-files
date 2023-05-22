@@ -50,3 +50,8 @@ function clone() {
   # Strip the "author/" prefix from "author/repo" for the directory name
   cd $(echo $1 | sed 's/.*\///')
 }
+
+scw() {
+    docker run -it --rm -v "$HOME/.config/scw:/root/.config/scw" scaleway/cli:latest "$@"
+}
+export -f scw
