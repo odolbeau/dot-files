@@ -32,8 +32,6 @@ sf() {
 }
 export -f sf
 
-alias at_bookstack_backup='scp altercampagne_cloud:/home/admin/nextcloud/var/bookstack-backups/backup-$(date +%F)_01-00.tar.gz ~/Nextcloud/apps/altercampagne/bookstack-backup-$(date +%F)_01-00.tar.gz'
-
 # Clone a repo like a boss!
 clone() {
   if [ "$#" -ne 1 ]; then
