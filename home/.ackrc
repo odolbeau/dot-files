@@ -4,8 +4,8 @@
 --ignore-dir=tags
 --ignore-dir=_site
 --ignore-dir=.subsplit
---ignore-dir=**/var/cache
---ignore-dir=**/var/log
+--ignore-dir=var/cache
+--ignore-dir=var/log
 
 # Twig type
 --type-set=database=.database
