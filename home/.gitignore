@@ -14,3 +14,6 @@ tags.temp
 .phpunit.result.cache
 .php_cs.cache
 .php-cs-fixer.cache
+
+# Folder created when using phpqa docker image
+tmp-phpqa/
