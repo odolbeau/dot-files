@@ -20,14 +20,22 @@ alias gp='git pull'
 
 # PHP
 alias scc='rm -Rf var/cache/*'
-alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpqa:/tmp" -w /project jakzal/phpqa:alpine'
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
+# Docker pass-through commands
+alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpqa:/tmp" -w /project jakzal/phpqa:alpine'
+alias sops='docker run --init -it --rm -v "$(pwd):/project" -w /project mozilla/sops sops'
+
 sf() {
-    if dce ps -q php > /dev/null 2>&1; then
-        dce exec php bin/console "$@"
+    make -q sf > /dev/null 2>&1
+    if [ "$?" -eq 2 ]; then
+        if dce ps -q php > /dev/null 2>&1; then
+            dce exec php bin/console "$@"
+        else
+            php bin/console "$@"
+        fi
     else
-        php bin/console "$@"
+        make sf "$@"
     fi
 }
 export -f sf
