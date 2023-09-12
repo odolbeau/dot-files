@@ -23,13 +23,14 @@
     l = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
     authors = shortlog -sn --no-merges
     f = fetch --all -p
-    brd = !git branch --merged | grep -v main | xargs git branch -d
+    brd = !git branch --merged | grep -v main | grep -v dev | xargs git branch -d
     wip = !git add -A && git ci -m 'WIP'
     rbi = rebase -i
     rbim = rebase -i origin/main
     rbup = !git f && git rebase upstream/main
     rsup = !git f && git reset --hard upstream/main
     brf = for-each-ref --sort=-committerdate refs/heads/ refs/remotes --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(color:yellow)%(authorname)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))'
+    brmine = !git for-each-ref --format='%(authoremail) %(refname)' | grep $(git config user.email) | cut -d ' ' -f 2
 [color]
     branch = auto
     diff = auto
