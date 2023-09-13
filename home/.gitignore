@@ -17,3 +17,8 @@ tags.temp
 
 # Folder created when using phpqa docker image
 tmp-phpqa/
+
+# By ignoring this file which is almost never used, I can create by own file in
+# project which are not mine to add my own tasks.
+# @See : https://gist.github.com/odolbeau/d61a35e4767c723de59221234b766828
+GNUmakefile
