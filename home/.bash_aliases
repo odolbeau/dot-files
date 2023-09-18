@@ -13,10 +13,15 @@ alias g='git'
 complete -F _complete_alias g
 alias gl='git l'
 alias gf='git f'
-alias gfmm='git f && git merge origin/main'
-alias gfrm='git f && git rebase origin/main'
-alias gfr='git f && git rebase '
-alias gp='git pull'
+
+# Fetch all remotes branches and rebase current one with its remote tracking branch if any
+gfr() {
+    gf
+    if tracking=$(git rev-parse --abbrev-ref --symbolic-full-name "@{u}"); then
+        git rebase "$tracking"
+    fi
+}
+export -f gfr
 
 # PHP
 alias scc='rm -Rf var/cache/*'

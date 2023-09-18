@@ -31,6 +31,7 @@
     rsup = !git f && git reset --hard upstream/main
     brf = for-each-ref --sort=-committerdate refs/heads/ refs/remotes --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(color:yellow)%(authorname)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))'
     brmine = !git for-each-ref --format='%(authoremail) %(refname)' | grep $(git config user.email) | cut -d ' ' -f 2
+    brorphan = "!git for-each-ref --format '%(refname) %(upstream:track)' refs/heads  | awk '$2 == \"[gone]\" {sub(\"refs/heads/\", \"\", $1); print $1}'"
 [color]
     branch = auto
     diff = auto
