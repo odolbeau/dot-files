@@ -1,4 +1,3 @@
-# Ignore some dirs
 --ignore-dir=web/js
 --ignore-dir=web/css
 --ignore-dir=tags
@@ -6,8 +5,11 @@
 --ignore-dir=.subsplit
 --ignore-dir=var/cache
 --ignore-dir=var/log
+--ignore-dir=.phpstan-cache
 
-# Twig type
+--ignore-file=is:.phpunit.result.cache
+--ignore-file=is:.php-cs-fixer.cache
+
 --type-set=database=.database
 --type-set=scss=.scss
 --type-set=sh=.sh

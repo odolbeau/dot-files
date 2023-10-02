@@ -17,19 +17,24 @@ alias gf='git f'
 # Fetch all remotes branches and rebase current one with its remote tracking branch if any
 gfr() {
     gf
-    if tracking=$(git rev-parse --abbrev-ref --symbolic-full-name "@{u}"); then
-        git rebase "$tracking"
+    if [ "$#" -eq 1 ]; then
+        git rebase "$1"
+    else
+        if tracking=$(git rev-parse --abbrev-ref --symbolic-full-name "@{u}"); then
+            git rebase "$tracking"
+        fi
     fi
 }
 export -f gfr
 
 # PHP
-alias scc='rm -Rf var/cache/*'
+alias scc='rm -Rf var/cache/{dev,test}'
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 # Docker pass-through commands
-alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -v "$(pwd)/tmp-phpqa:/tmp" -w /project jakzal/phpqa:alpine'
+alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -w /project jakzal/phpqa:alpine'
 alias sops='docker run --init -it --rm -v "$(pwd):/project" -w /project mozilla/sops sops'
+alias castor='docker run -it --rm -v "$(pwd):/project" -v "/var/run/docker.sock:/var/run/docker.sock:rw" castor'
 
 sf() {
     make -q sf > /dev/null 2>&1
