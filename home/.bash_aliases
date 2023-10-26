@@ -12,20 +12,11 @@ alias syslog='sudo journalctl --system -f -p 5 -n 100'
 alias g='git'
 complete -F _complete_alias g
 alias gl='git l'
+complete -F _complete_alias gl
 alias gf='git f'
-
-# Fetch all remotes branches and rebase current one with its remote tracking branch if any
-gfr() {
-    gf
-    if [ "$#" -eq 1 ]; then
-        git rebase "$1"
-    else
-        if tracking=$(git rev-parse --abbrev-ref --symbolic-full-name "@{u}"); then
-            git rebase "$tracking"
-        fi
-    fi
-}
-export -f gfr
+complete -F _complete_alias gf
+alias gfr='git f && git rebase '
+complete -F _complete_alias gfr
 
 # PHP
 alias scc='rm -Rf var/cache/{dev,test}'
