@@ -136,6 +136,7 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 [[ ":$PATH:" =~ ":/usr/local/bin:" ]] || export PATH="/usr/local/bin:$PATH"
 [[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || export PATH="/usr/local/sbin:$PATH"
 [[ ":$PATH:" =~ ":$HOME/.symfony/bin:" ]] || export PATH="$HOME/.symfony/bin:$PATH"
+[[ ":$PATH:" =~ ":$HOME/.local/bin:" ]] || export PATH="$HOME/.local/bin:$PATH"
 if which ruby > /dev/null && which gem > /dev/null; then
     [[ ":$PATH:" =~ "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin" ]] || export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
