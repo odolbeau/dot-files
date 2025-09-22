@@ -101,6 +101,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -d ~/.bash_aliases.d/ ]; then
+    for bash_aliases in `ls ~/.bash_aliases.d`; do
+        . ~/.bash_aliases.d/$bash_aliases
+    done
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).

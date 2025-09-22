@@ -8,7 +8,7 @@ for FILE in $(find "${CURDIR}/../home" -maxdepth 1 -type f -printf "%f\n"); do
 done
 
 # Create ${HOME}/.config if needed
-mkdir -p "${HOME}/.config"
+mkdir -p "${HOME}/.config" "${HOME}/.bash_aliases.d"
 
 # Create symbolic links for all folders which sould be present in ${HOME}/.config
 for FOLDER in $(find "${CURDIR}/../home/.config" -mindepth 1 -maxdepth 1 -type d -printf "%f\n"); do
