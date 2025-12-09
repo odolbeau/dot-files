@@ -1,6 +1,5 @@
 [global_config]
   inactive_color_offset = 0.7
-  suppress_multiple_term_dialog = True
 [keybindings]
   cycle_next = None
   cycle_prev = None
@@ -10,6 +9,7 @@
   move_tab_left = None
   next_tab = <Primary>Tab
   prev_tab = <Primary><Shift>Tab
+  new_window = <Primary>n
 [profiles]
   [[default]]
     background_color = "#002b36"
@@ -21,4 +21,12 @@
   [[prez]]
     background_color = "#fdf6e3"
     foreground_color = "#657b83"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
 [plugins]
