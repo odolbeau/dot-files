@@ -22,3 +22,5 @@ tmp-phpqa/
 # project which are not mine to add my own tasks.
 # @See : https://gist.github.com/odolbeau/d61a35e4767c723de59221234b766828
 GNUmakefile
+
+**/.claude/settings.local.json
