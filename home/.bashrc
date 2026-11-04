@@ -134,7 +134,7 @@ fi
 
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 
-#export PATH="~/.composer/vendor/bin:$PATH"
+[[ ":$PATH:" =~ ":$HOME/.composer/vendor/bin:" ]] || export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 [[ ":$PATH:" =~ ":/opt/local/bin:" ]] || export PATH="/opt/local/bin:$PATH"
 [[ ":$PATH:" =~ ":/opt/local/sbin:" ]] || export PATH="/opt/local/sbin:$PATH"
