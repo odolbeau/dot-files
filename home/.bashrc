@@ -170,3 +170,8 @@ PERL_MM_OPT="INSTALL_BASE=/home/bab/perl5"; export PERL_MM_OPT;
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
+
+# mise: per-project tool versions (.mise.toml), installed by laptop-setup
+if command -v mise > /dev/null; then
+    eval "$(mise activate bash)"
+fi

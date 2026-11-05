@@ -24,7 +24,6 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 # Docker pass-through commands
 alias phpqa='docker run --init -it --rm -v "$(pwd):/project" -w /project jakzal/phpqa:alpine'
-alias sops='docker run --init -it --rm -v "$(pwd):/project" -w /project mozilla/sops sops'
 alias castor='docker run -it --rm -v "$(pwd):/project" -v "/var/run/docker.sock:/var/run/docker.sock:rw" castor'
 
 sf() {
